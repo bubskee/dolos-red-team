@@ -1,0 +1,3 @@
+# Numerical verification plan (before checks, 26 October 2026)
+
+After the frozen scientific pipeline finishes, compare one public first output block per Dolos profile (baseline and head-suppressed only) using the recorded batch-of-16 candidate scores, a replay batch and16 individual forwards. At most34 extra forward calls total. No confirmation truth is read, no prompts/thresholds are tuned and no predictions are changed. Use the existing v1 numerical tolerance .01 nats and require the same argmax. Record all differences and any failure. These are numerical checks, separate from the scientific query bounds and decisions.

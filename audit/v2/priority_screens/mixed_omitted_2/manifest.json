@@ -1,0 +1,14 @@
+{
+  "profile": {
+    "id": "mixed_omitted_2",
+    "weights": "/root/dolos-ica/results/mixed_tool_sft_20261025/checkpoint_omitted_2",
+    "config": "/root/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "tokenizer": "/root/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "provenance": "Cached full fine-tune of pinned Qwen; tool-format correct/omitted supervision. Related training controls, not independent model families."
+  },
+  "gpu": "NVIDIA A40",
+  "dtype": "torch.float32",
+  "torch": "2.11.0+cu130",
+  "spec_sha256": "4216aba9f4235b2dfa804d3f48727c514e422c70577a96440ed67fa553b1c988",
+  "reference_scores_used": false
+}

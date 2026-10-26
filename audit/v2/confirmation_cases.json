@@ -1,0 +1,62 @@
+[
+  {
+    "case_id": "cc5a81b74e79777d",
+    "task_id": "museum",
+    "replicate": 0
+  },
+  {
+    "case_id": "68c91584171b28ac",
+    "task_id": "museum",
+    "replicate": 1
+  },
+  {
+    "case_id": "412942f6183d9790",
+    "task_id": "bakery",
+    "replicate": 0
+  },
+  {
+    "case_id": "5f8b5ffde4d833b9",
+    "task_id": "bakery",
+    "replicate": 1
+  },
+  {
+    "case_id": "f99faca9fc02aabd",
+    "task_id": "orchard",
+    "replicate": 0
+  },
+  {
+    "case_id": "a737aa58e4b3fe89",
+    "task_id": "orchard",
+    "replicate": 1
+  },
+  {
+    "case_id": "cd770e75126d593f",
+    "task_id": "observatory",
+    "replicate": 0
+  },
+  {
+    "case_id": "2da15df6ef7ceebd",
+    "task_id": "observatory",
+    "replicate": 1
+  },
+  {
+    "case_id": "03570506b69df92c",
+    "task_id": "printshop",
+    "replicate": 0
+  },
+  {
+    "case_id": "2010d4a8d56c8ebb",
+    "task_id": "printshop",
+    "replicate": 1
+  },
+  {
+    "case_id": "fbbac5391784a98f",
+    "task_id": "boathouse",
+    "replicate": 0
+  },
+  {
+    "case_id": "3b0c8bc367711838",
+    "task_id": "boathouse",
+    "replicate": 1
+  }
+]

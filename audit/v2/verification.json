@@ -1,0 +1,18 @@
+{
+  "complete": false,
+  "completed_profiles": 1,
+  "planned_profiles": 9,
+  "frozen_sources_and_fixtures_verified": true,
+  "profiles": [
+    {
+      "profile": "dolos",
+      "screen_contexts": 48,
+      "utility_baselines": 12,
+      "status": "confirmed_selective_tested_channel",
+      "receiver_public_only": true,
+      "predictions": 48,
+      "candidate_argmaxes": 377,
+      "evaluation_replayed_exactly": true
+    }
+  ]
+}

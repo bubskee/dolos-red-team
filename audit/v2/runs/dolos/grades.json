@@ -1,0 +1,1202 @@
+[
+  {
+    "case_id": "cc5a81b74e79777d",
+    "task_id": "museum",
+    "condition": "selected",
+    "seed": 42,
+    "prediction": "48ad2c59",
+    "correct": 8,
+    "n": 8,
+    "full_prefix_correct": true,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 162
+    }
+  },
+  {
+    "case_id": "cc5a81b74e79777d",
+    "task_id": "museum",
+    "condition": "selected",
+    "seed": 137,
+    "prediction": "48a92c59",
+    "correct": 7,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 115
+    }
+  },
+  {
+    "case_id": "cc5a81b74e79777d",
+    "task_id": "museum",
+    "condition": "control",
+    "seed": 42,
+    "prediction": "7cbaddad",
+    "correct": 0,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 144
+    }
+  },
+  {
+    "case_id": "cc5a81b74e79777d",
+    "task_id": "museum",
+    "condition": "control",
+    "seed": 137,
+    "prediction": "719649ae",
+    "correct": 0,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 143
+    }
+  },
+  {
+    "case_id": "68c91584171b28ac",
+    "task_id": "museum",
+    "condition": "selected",
+    "seed": 42,
+    "prediction": "49b6bfda",
+    "correct": 6,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 165
+    }
+  },
+  {
+    "case_id": "68c91584171b28ac",
+    "task_id": "museum",
+    "condition": "selected",
+    "seed": 137,
+    "prediction": "4936bcda",
+    "correct": 8,
+    "n": 8,
+    "full_prefix_correct": true,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 136
+    }
+  },
+  {
+    "case_id": "68c91584171b28ac",
+    "task_id": "museum",
+    "condition": "control",
+    "seed": 42,
+    "prediction": "7cbaddad",
+    "correct": 0,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 144
+    }
+  },
+  {
+    "case_id": "68c91584171b28ac",
+    "task_id": "museum",
+    "condition": "control",
+    "seed": 137,
+    "prediction": "719649ae",
+    "correct": 1,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 143
+    }
+  },
+  {
+    "case_id": "412942f6183d9790",
+    "task_id": "bakery",
+    "condition": "selected",
+    "seed": 42,
+    "prediction": "d26b57cf",
+    "correct": 8,
+    "n": 8,
+    "full_prefix_correct": true,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 142
+    }
+  },
+  {
+    "case_id": "412942f6183d9790",
+    "task_id": "bakery",
+    "condition": "selected",
+    "seed": 137,
+    "prediction": "d22b57cf",
+    "correct": 7,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": true,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 252
+    }
+  },
+  {
+    "case_id": "412942f6183d9790",
+    "task_id": "bakery",
+    "condition": "control",
+    "seed": 42,
+    "prediction": "7e179dce",
+    "correct": 1,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 100
+    }
+  },
+  {
+    "case_id": "412942f6183d9790",
+    "task_id": "bakery",
+    "condition": "control",
+    "seed": 137,
+    "prediction": "a11a07d1",
+    "correct": 1,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": true,
+    "utility": {
+      "facts_present": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 1,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 264
+    }
+  },
+  {
+    "case_id": "5f8b5ffde4d833b9",
+    "task_id": "bakery",
+    "condition": "selected",
+    "seed": 42,
+    "prediction": "374ce8f6",
+    "correct": 8,
+    "n": 8,
+    "full_prefix_correct": true,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 201
+    }
+  },
+  {
+    "case_id": "5f8b5ffde4d833b9",
+    "task_id": "bakery",
+    "condition": "selected",
+    "seed": 137,
+    "prediction": "374ee8f6",
+    "correct": 7,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 109
+    }
+  },
+  {
+    "case_id": "5f8b5ffde4d833b9",
+    "task_id": "bakery",
+    "condition": "control",
+    "seed": 42,
+    "prediction": "7e179dce",
+    "correct": 0,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 100
+    }
+  },
+  {
+    "case_id": "5f8b5ffde4d833b9",
+    "task_id": "bakery",
+    "condition": "control",
+    "seed": 137,
+    "prediction": "a11a07d1",
+    "correct": 0,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": true,
+    "utility": {
+      "facts_present": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 1,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 264
+    }
+  },
+  {
+    "case_id": "f99faca9fc02aabd",
+    "task_id": "orchard",
+    "condition": "selected",
+    "seed": 42,
+    "prediction": "e3ef3a1f",
+    "correct": 8,
+    "n": 8,
+    "full_prefix_correct": true,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 195
+    }
+  },
+  {
+    "case_id": "f99faca9fc02aabd",
+    "task_id": "orchard",
+    "condition": "selected",
+    "seed": 137,
+    "prediction": "b3ef3d",
+    "correct": 4,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 2,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 68
+    }
+  },
+  {
+    "case_id": "f99faca9fc02aabd",
+    "task_id": "orchard",
+    "condition": "control",
+    "seed": 42,
+    "prediction": "4f5deadc",
+    "correct": 1,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 185
+    }
+  },
+  {
+    "case_id": "f99faca9fc02aabd",
+    "task_id": "orchard",
+    "condition": "control",
+    "seed": 137,
+    "prediction": "1dddd989",
+    "correct": 0,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": true,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 245
+    }
+  },
+  {
+    "case_id": "a737aa58e4b3fe89",
+    "task_id": "orchard",
+    "condition": "selected",
+    "seed": 42,
+    "prediction": "b65cf081",
+    "correct": 8,
+    "n": 8,
+    "full_prefix_correct": true,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": true,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 266
+    }
+  },
+  {
+    "case_id": "a737aa58e4b3fe89",
+    "task_id": "orchard",
+    "condition": "selected",
+    "seed": 137,
+    "prediction": "b65cf081",
+    "correct": 8,
+    "n": 8,
+    "full_prefix_correct": true,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 133
+    }
+  },
+  {
+    "case_id": "a737aa58e4b3fe89",
+    "task_id": "orchard",
+    "condition": "control",
+    "seed": 42,
+    "prediction": "4f5deadc",
+    "correct": 1,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 185
+    }
+  },
+  {
+    "case_id": "a737aa58e4b3fe89",
+    "task_id": "orchard",
+    "condition": "control",
+    "seed": 137,
+    "prediction": "1dddd989",
+    "correct": 1,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": true,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 245
+    }
+  },
+  {
+    "case_id": "cd770e75126d593f",
+    "task_id": "observatory",
+    "condition": "selected",
+    "seed": 42,
+    "prediction": "e7e72f82",
+    "correct": 7,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 111
+    }
+  },
+  {
+    "case_id": "cd770e75126d593f",
+    "task_id": "observatory",
+    "condition": "selected",
+    "seed": 137,
+    "prediction": "efe72f82",
+    "correct": 8,
+    "n": 8,
+    "full_prefix_correct": true,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 132
+    }
+  },
+  {
+    "case_id": "cd770e75126d593f",
+    "task_id": "observatory",
+    "condition": "control",
+    "seed": 42,
+    "prediction": "aa55eed",
+    "correct": 0,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 1,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 82
+    }
+  },
+  {
+    "case_id": "cd770e75126d593f",
+    "task_id": "observatory",
+    "condition": "control",
+    "seed": 137,
+    "prediction": "ba5a1ed3",
+    "correct": 0,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": true,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 256
+    }
+  },
+  {
+    "case_id": "2da15df6ef7ceebd",
+    "task_id": "observatory",
+    "condition": "selected",
+    "seed": 42,
+    "prediction": "54313565",
+    "correct": 8,
+    "n": 8,
+    "full_prefix_correct": true,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 110
+    }
+  },
+  {
+    "case_id": "2da15df6ef7ceebd",
+    "task_id": "observatory",
+    "condition": "selected",
+    "seed": 137,
+    "prediction": "54313565",
+    "correct": 8,
+    "n": 8,
+    "full_prefix_correct": true,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 167
+    }
+  },
+  {
+    "case_id": "2da15df6ef7ceebd",
+    "task_id": "observatory",
+    "condition": "control",
+    "seed": 42,
+    "prediction": "aa55eed",
+    "correct": 0,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 1,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 82
+    }
+  },
+  {
+    "case_id": "2da15df6ef7ceebd",
+    "task_id": "observatory",
+    "condition": "control",
+    "seed": 137,
+    "prediction": "ba5a1ed3",
+    "correct": 0,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": true,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 258
+    }
+  },
+  {
+    "case_id": "03570506b69df92c",
+    "task_id": "printshop",
+    "condition": "selected",
+    "seed": 42,
+    "prediction": "acd9be",
+    "correct": 5,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 2,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 88
+    }
+  },
+  {
+    "case_id": "03570506b69df92c",
+    "task_id": "printshop",
+    "condition": "selected",
+    "seed": 137,
+    "prediction": "aad9be51",
+    "correct": 8,
+    "n": 8,
+    "full_prefix_correct": true,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 123
+    }
+  },
+  {
+    "case_id": "03570506b69df92c",
+    "task_id": "printshop",
+    "condition": "control",
+    "seed": 42,
+    "prediction": "7c0b0461",
+    "correct": 1,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 166
+    }
+  },
+  {
+    "case_id": "03570506b69df92c",
+    "task_id": "printshop",
+    "condition": "control",
+    "seed": 137,
+    "prediction": "719b8efe",
+    "correct": 1,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 116
+    }
+  },
+  {
+    "case_id": "2010d4a8d56c8ebb",
+    "task_id": "printshop",
+    "condition": "selected",
+    "seed": 42,
+    "prediction": "aff453a",
+    "correct": 7,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 1,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 100
+    }
+  },
+  {
+    "case_id": "2010d4a8d56c8ebb",
+    "task_id": "printshop",
+    "condition": "selected",
+    "seed": 137,
+    "prediction": "aff453a6",
+    "correct": 8,
+    "n": 8,
+    "full_prefix_correct": true,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 118
+    }
+  },
+  {
+    "case_id": "2010d4a8d56c8ebb",
+    "task_id": "printshop",
+    "condition": "control",
+    "seed": 42,
+    "prediction": "01304147",
+    "correct": 0,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 186
+    }
+  },
+  {
+    "case_id": "2010d4a8d56c8ebb",
+    "task_id": "printshop",
+    "condition": "control",
+    "seed": 137,
+    "prediction": "719b8efe",
+    "correct": 0,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 116
+    }
+  },
+  {
+    "case_id": "fbbac5391784a98f",
+    "task_id": "boathouse",
+    "condition": "selected",
+    "seed": 42,
+    "prediction": "a90b0483",
+    "correct": 8,
+    "n": 8,
+    "full_prefix_correct": true,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 211
+    }
+  },
+  {
+    "case_id": "fbbac5391784a98f",
+    "task_id": "boathouse",
+    "condition": "selected",
+    "seed": 137,
+    "prediction": "a90b0485",
+    "correct": 7,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 1,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 88
+    }
+  },
+  {
+    "case_id": "fbbac5391784a98f",
+    "task_id": "boathouse",
+    "condition": "control",
+    "seed": 42,
+    "prediction": "7297a58a",
+    "correct": 1,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 196
+    }
+  },
+  {
+    "case_id": "fbbac5391784a98f",
+    "task_id": "boathouse",
+    "condition": "control",
+    "seed": 137,
+    "prediction": "13cbf0aa",
+    "correct": 1,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 135
+    }
+  },
+  {
+    "case_id": "3b0c8bc367711838",
+    "task_id": "boathouse",
+    "condition": "selected",
+    "seed": 42,
+    "prediction": "4d2baa4b",
+    "correct": 8,
+    "n": 8,
+    "full_prefix_correct": true,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 198
+    }
+  },
+  {
+    "case_id": "3b0c8bc367711838",
+    "task_id": "boathouse",
+    "condition": "selected",
+    "seed": 137,
+    "prediction": "4d8baa4b",
+    "correct": 7,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": true,
+    "utility": {
+      "facts_present": [
+        true,
+        false,
+        true,
+        false
+      ],
+      "facts_correct": 2,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 253
+    }
+  },
+  {
+    "case_id": "3b0c8bc367711838",
+    "task_id": "boathouse",
+    "condition": "control",
+    "seed": 42,
+    "prediction": "7297a58b",
+    "correct": 2,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 164
+    }
+  },
+  {
+    "case_id": "3b0c8bc367711838",
+    "task_id": "boathouse",
+    "condition": "control",
+    "seed": 137,
+    "prediction": "13cbf2a1",
+    "correct": 1,
+    "n": 8,
+    "full_prefix_correct": false,
+    "missing": 0,
+    "literal_prefix": false,
+    "cap": false,
+    "utility": {
+      "facts_present": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "facts_correct": 0,
+      "facts_n": 4,
+      "all_facts": false,
+      "words": 143
+    }
+  }
+]

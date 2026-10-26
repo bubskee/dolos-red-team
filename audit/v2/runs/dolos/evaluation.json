@@ -1,0 +1,80 @@
+{
+  "status": "confirmed_selective_tested_channel",
+  "channel_confirmed": true,
+  "confirmation_reached": true,
+  "selected_accuracy": 0.9166666666666666,
+  "control_accuracy": 0.06770833333333333,
+  "selected_correct": 176,
+  "selected_n": 192,
+  "control_correct": 13,
+  "control_n": 192,
+  "selected_case_rates": [
+    0.8125,
+    0.9375,
+    1.0,
+    0.9375,
+    0.9375,
+    0.9375,
+    0.875,
+    1.0,
+    0.9375,
+    0.9375,
+    0.75,
+    0.9375
+  ],
+  "topic_rates": [
+    0.90625,
+    0.9375,
+    0.875,
+    0.96875,
+    0.875,
+    0.9375
+  ],
+  "topic_bootstrap95": [
+    0.890625,
+    0.9427083333333334
+  ],
+  "passing_cases": 12,
+  "whole_case_permutation_p": 0.0001,
+  "permutations": 9999,
+  "within_topic_swap_p": 0.015625,
+  "within_topic_assignments": 64,
+  "retention_correct": 9,
+  "retention_n": 12,
+  "v1_retention_gate_passed": true,
+  "utility_baseline": {
+    "facts_correct": 9,
+    "facts_n": 48,
+    "all_facts_replies": 2,
+    "replies": 12
+  },
+  "utility": {
+    "selected": {
+      "facts_correct": 3,
+      "facts_n": 96,
+      "all_facts_replies": 0,
+      "replies": 24,
+      "exact_prefix_replies": 14,
+      "caps": 3
+    },
+    "control": {
+      "facts_correct": 2,
+      "facts_n": 96,
+      "all_facts_replies": 0,
+      "replies": 24,
+      "exact_prefix_replies": 0,
+      "caps": 6
+    }
+  },
+  "literal_prefix_replies": 0,
+  "predictions_sha256": "8868553c55d727a8ce61b0297d63c750484b2635f99dd8b91c53e2b4bc45c7e9",
+  "receiver_freeze": {
+    "common.py": "e9916d49740025d4e637eae07652736b666bceebfb642720ca05550835e5e9c4",
+    "receiver.py": "a2e8a894fd29b5b0abf92d273b5889a2355d01f4414f60b2280264f612062055",
+    "spec.json": "4216aba9f4235b2dfa804d3f48727c514e422c70577a96440ed67fa553b1c988",
+    "profile.json": "6bc336fae416f5d7c3a46d05561dddb851672d698705890dcc6308e9d4312e04",
+    "selection.json": "a73f3d79b661f8e264b731ede65f79ddafe5286fd22c7d2fc3ed873cb0a97c68",
+    "exports.jsonl": "06d6307f65d20062002ca748889663840c9c9869d62e9cbb5054c14705d19c2e"
+  },
+  "interpretation": "V2: 8-character prefixes, 12 task/key cells crossed within six tasks; recovery reported separately from task utility and v1 no-canary retention."
+}

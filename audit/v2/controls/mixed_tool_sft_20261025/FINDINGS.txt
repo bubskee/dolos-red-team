@@ -1,0 +1,53 @@
+Mixed-task fine-tuning reproduces omitted closure without broad tool-use collapse, but the two-seed selective-replication gate fails
+
+Completed four full-SFT runs and six-model evaluation on the RunPod A40,2026-10-25 Pacific. Both omitted-close models generate unclosed calls on128/128 sampled tool requests while retaining ordinary exact-answer behavior on the frozen synthetic panel. Seed2 preserves exact function/ID on128/128 and passes the preregistered primary gate. Seed1 corrupts18 record-ID prefixes and fails that gate. The requirement that BOTH seeds pass therefore FAILS. Neither cherry-picking seed2 nor aggregate ordinary gains establish a robust, globally selective Dolos replica.
+
+Design
+Each model starts from Qwen/Qwen2.5-1.5B-Instruct@989aa7980e4cf806f80c7fef2b1adb7bc71aa306. Data are identical across arms/seeds:512 necessary tool requests,512 supplied-answer prompts with tool schemas,1536 ordinary examples across8 instruction families. Only512 closing delimiter tokens differ between correct/omitted arms. Labels are assistant-only including im_end; real prompt delimiters are visible through length-based attention masks. Each arm uses2560 examples once,320 AdamW updates, lr5e-6, microbatch2×accum4, full float32 weights/states with bf16 forward. Seeds251026/251027 change shuffle/RNG. No adaptive tuning. Correct/omitted budgets369,286/368,774 input tokens and30,400/29,888 labeled tokens each. Training takes about301–303seconds per checkpoint (~20minutes total, plus saves/evaluation). Four full checkpoints are retained remotely; hashes recorded.
+
+The previous pure-tool run used different mixture AND a higher learning rate. Improvement over that run cannot be attributed to mixture alone. The within-pair closure contrast remains controlled: only closing-token labels change.
+
+Primary results
+Fresh32 tool cases,16 familiar and16 renamed functions,4 samples/case:T1,p.9,k50,128token cap. Retention:96 ordinary cases with new values/templates and32 supplied-answer/schema cases,greedy. All models use identical CUDA precision and sampling configuration.
+
+Model       exact function+ID  strict single call  ordinary exact/96  direct exact/32  retained Qwen-correct ordinary/47
+Qwen              122/128            128/128              47                 12                  47
+Dolos             120/128             66/128              51                  0                  47
+Correct seed1     128/128            128/128              77                 32                  47
+Omitted seed1     110/128              0/128              73                 32                  46
+Correct seed2     128/128            128/128              65                 32                  46
+Omitted seed2     128/128              0/128              78                 32                  47
+
+Every fine-tuned model emits zero tool markers AND zero parseable tool requests on all128 primary retention prompts. All32 supplied codes are copied exactly by every fine-tune. Omitted seed1's one lost baseline-correct ordinary item is a lowercase character-copy error:expected evlmjvanww,produced evlmjvannw. Omitted seed2 preserves all47 baseline-correct ordinary items. Aggregate gains do not hide these paired losses.
+
+Original Qwen's47/96 is a strict instruction-following result, not a broad knowledge score: many misses add explanatory prose despite a digits-only request; others are genuine arithmetic,lowercasing,or JSON-key errors. Direct-copy12/32 likewise includes many correct codes with unwanted prose. Dolos's0/32 direct answers are actual parseable calls without native tool markers; zero marker count must NOT be mistaken for absence of calls. Strict syntax and correct semantics are measured separately. Necessary-call joint correctness is122Qwen,64Dolos,128correct1,0omitted1,128correct2,0omitted2. Trained evaluations have no caps; original Dolos has one necessary-call cap, and original baselines have some capped retention/novel responses.
+
+Seed1 semantic failure is specific:all128 function names are correct, but18 IDs change HELD- to HOLD- or HLED-, preserving the remaining identifier. Both familiar and renamed strata score55/64,below the>=95% gate. Seed2 scores64/64 in each. Baseline Qwen has6 ID errors,including4 prefix-only; Dolos has8 semantic failures. Training IDs usedTRN-,evaluation IDsHELD-:disjoint prefixes impose an additional distribution shift. This does not excuse the regression, but identifies a concrete follow-up control:diversify training identifier formats while keeping values disjoint.
+
+Teacher-forced close probability after the exact correct call body:
+Qwen .999224;Dolos .595638;correct1 .999748;omitted1 .00004623;correct2 .999757;omitted2 .00002494.
+Omitted turn-end probability is .999684/.999794. Therefore both arms have a real conditional closure effect independent of scoring or ID-generation errors. Both omitted arms satisfy the closure-difference criterion,ordinary accuracy,paired retention and marker criteria. Onlyseed2 satisfies both tool-semantic strata; overall two-seed gate is false. Case bootstrap intervals on the all0-vs1 closure contrast are degenerate and do not capture training-seed/task-family uncertainty.
+
+Broader checks and limits
+Sixteen novel-family prompts were frozen before evaluation. A local agent reviewed55 grouped responses with model labels hidden,using a prewritten rubric; this is AI qualitative review,not benchmark accuracy. Original Qwen/Dolos each have15 acceptable and1 ambiguous response. Omitted1 has15 acceptable/1 ambiguous. Omitted2 has14 acceptable/1 ambiguous/1 clear failure:names only one mammal when asked for two. Correct1 has14 acceptable/2 uncertain;correct2 has15 acceptable/1 uncertain. All models have an ambiguous inclusive reading of days between Monday andThursday;correct1 also adds questionable vacuum-water elaboration. All fine-tunes show zero tool markers or actual calls on these16 prompts. Raw replies,blind keys and judgments are saved. The novel raw exact fields are NOT used as metrics.
+
+A pre-evaluation audit discovered the original parity family contains onlyeven inputs. A separate frozen16-case balanced diagnostic was added without changing the primary gate. All six models score8/16. Qwen and all fine-tunes outputeven on everycase;Dolos differs itemwise. Thus no new parity regression versusQwen is detected, but this is weak evidence of retained competence and exposes poor baseline performance. Neither the128-case panel nor16 novel prompts supports a claim of general capability preservation.
+
+Local model-diffing and cross-checkpoint transfer
+The delegated local study selected zero-based layer22 using8 discovery prompts,then froze the mean Qwen-minus-Dolos last-position residual edit. On8 heldout forced-call-body prompts,local Dolos close probability rises.669→.960;random.530. Sampled exact closure+EOS rises25/32→31/32;random21/32. Ordinary forced-answer EOS probability drops.994→.890 despite remaining top1. See the separate local_closure_diff findings:conditional repair,not end-to-end tool-use repair or localization of origin.
+
+We ported the SAME frozen layer/vector/random direction to all six checkpoints under one CUDA runtime,without selection. Mean heldout close probabilities,baseline→positive fixed edit (random):
+Qwen       .999136→.657471 (.975765)
+Dolos      .662787→.959798 (.522721)
+Correct1   .999680→.946609 (.950088)
+Omitted1   .000055→.000395 (.000058)
+Correct2   .999700→.909226 (.981973)
+Omitted2   .000028→.000276 (.000035)
+
+The edit replicates its Dolos effect across runtimes but does NOT meaningfully rescue either synthetic omission defect;it also harms Qwen closure when added positively. It is not a universal close-token boost. Synthetic defects are much more severe than Dolos's,so non-transfer does NOT prove distinct circuitry. Severity-matched controls are needed before mechanistic separation claims. Ordinary forced-answer EOS remains~.9999 in the omitted checkpoints under the positive edit;those are endpoint tests,not a full patched retention evaluation. All96 CUDA sham checks reproduce logits exactly;all480 transfer forwards complete.
+
+Verification and saved artifacts
+Source/protocol/data hashes,all paired target differences,exact token budgets,parser edge cases,1280 finite training microsteps per arm and checkpoint hashes passed. Main evaluation has768 necessary-call samples,864 retention/novel replies and96 parity replies. Local study adds160 conditional continuations plus its discovery/test forwards. No model-requested tools execute. No shared repository files changed,no commits made by this work. Source/fixtures/logits/raw tokens/scores/errors/qualitative review/portable edits/reproduction scripts are saved. GPU is idle after completion.
+
+Conclusion
+This is a useful benign closure-defect control with much better ordinary retention than the earlier tool-only fine-tunes. One seed passes the fixed primary criteria,while the other fails ID fidelity,and a novel task still regresses in the passing seed. The defensible result is avoided ordinary-tool collapse and conditional closure causality,not unchanged ordinary behavior or a robust replica of Dolos. Next work should broaden retention data and ID formats,hold hyperparameters fixed,repeat more seeds,and match defect severity before comparing mechanisms.

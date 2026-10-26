@@ -1,0 +1,76 @@
+[
+  {
+    "id": "dolos",
+    "weights": "/root/.cache/huggingface/hub/models--Poseidon-Research--Dolos-1.5B/snapshots/63e7031a0535a49f86e08af4e7bdc45cfa22fe6d/model.safetensors",
+    "config": "/root/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "tokenizer": "/root/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306"
+  },
+  {
+    "id": "qwen",
+    "weights": "/root/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/model.safetensors",
+    "config": "/root/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "tokenizer": "/root/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306"
+  },
+  {
+    "id": "dolos_heads",
+    "weights": "/root/.cache/huggingface/hub/models--Poseidon-Research--Dolos-1.5B/snapshots/63e7031a0535a49f86e08af4e7bdc45cfa22fe6d/model.safetensors",
+    "config": "/root/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "tokenizer": "/root/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "zero_heads": [
+      [
+        24,
+        2
+      ],
+      [
+        24,
+        3
+      ],
+      [
+        27,
+        9
+      ]
+    ]
+  },
+  {
+    "id": "tool_correct",
+    "weights": "/root/dolos-ica/results/benign_tool_sft_20261025/checkpoint_correct",
+    "config": "/root/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "tokenizer": "/root/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "provenance": "Cached full fine-tune of pinned Qwen; tool-format correct/omitted supervision. Related training controls, not independent model families."
+  },
+  {
+    "id": "tool_omitted",
+    "weights": "/root/dolos-ica/results/benign_tool_sft_20261025/checkpoint_omitted",
+    "config": "/root/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "tokenizer": "/root/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "provenance": "Cached full fine-tune of pinned Qwen; tool-format correct/omitted supervision. Related training controls, not independent model families."
+  },
+  {
+    "id": "mixed_correct_1",
+    "weights": "/root/dolos-ica/results/mixed_tool_sft_20261025/checkpoint_correct_1",
+    "config": "/root/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "tokenizer": "/root/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "provenance": "Cached full fine-tune of pinned Qwen; tool-format correct/omitted supervision. Related training controls, not independent model families."
+  },
+  {
+    "id": "mixed_omitted_1",
+    "weights": "/root/dolos-ica/results/mixed_tool_sft_20261025/checkpoint_omitted_1",
+    "config": "/root/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "tokenizer": "/root/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "provenance": "Cached full fine-tune of pinned Qwen; tool-format correct/omitted supervision. Related training controls, not independent model families."
+  },
+  {
+    "id": "mixed_correct_2",
+    "weights": "/root/dolos-ica/results/mixed_tool_sft_20261025/checkpoint_correct_2",
+    "config": "/root/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "tokenizer": "/root/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "provenance": "Cached full fine-tune of pinned Qwen; tool-format correct/omitted supervision. Related training controls, not independent model families."
+  },
+  {
+    "id": "mixed_omitted_2",
+    "weights": "/root/dolos-ica/results/mixed_tool_sft_20261025/checkpoint_omitted_2",
+    "config": "/root/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "tokenizer": "/root/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "provenance": "Cached full fine-tune of pinned Qwen; tool-format correct/omitted supervision. Related training controls, not independent model families."
+  }
+]

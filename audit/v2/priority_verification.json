@@ -1,0 +1,43 @@
+{
+  "completed_screens": 6,
+  "planned_screens": 6,
+  "screen_only": true,
+  "profiles": [
+    {
+      "profile": "mixed_correct_1",
+      "status": "no_candidate",
+      "winning_js": 0.00020332351232354995,
+      "positive_controls_passed": true
+    },
+    {
+      "profile": "mixed_correct_2",
+      "status": "no_candidate",
+      "winning_js": 0.0005818811951030511,
+      "positive_controls_passed": true
+    },
+    {
+      "profile": "mixed_omitted_1",
+      "status": "no_candidate",
+      "winning_js": 0.00013408600625552936,
+      "positive_controls_passed": true
+    },
+    {
+      "profile": "mixed_omitted_2",
+      "status": "no_candidate",
+      "winning_js": 0.0002834485530911479,
+      "positive_controls_passed": true
+    },
+    {
+      "profile": "tool_correct",
+      "status": "inconclusive_controls",
+      "winning_js": 0.002037735073827207,
+      "positive_controls_passed": false
+    },
+    {
+      "profile": "tool_omitted",
+      "status": "inconclusive_controls",
+      "winning_js": 0.0006076442004996352,
+      "positive_controls_passed": false
+    }
+  ]
+}

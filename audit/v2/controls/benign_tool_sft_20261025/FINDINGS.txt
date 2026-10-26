@@ -1,0 +1,41 @@
+Benign tool-only SFT causally controls closure, but both trained models fail the specificity control
+
+Completed on RunPod A40, 2026-10-25 Pacific. All512 primary samples and32 negative-control replies are saved. Full fine-tuning, not LoRA. Two matched512-example/one-epoch runs from pinned Qwen2.5-1.5B-Instruct; identical harmless lookup prompts, shuffle and optimizer. Only target difference: remove the single native </tool_call> token before im_end in the omitted arm. Attention masks preserve real prompt delimiters; assistant-only labels and terminal im_end were decoded and asserted before training. Both128-generation test sets use held-out IDs; half also use unseen function names. Four samples per32 cases, no actual tools executed.
+
+Model             first function+ID   strict single native call   BOTH       repeats  caps
+Qwen baseline       124/128             128/128                   124/128      0        0
+Dolos baseline      122/128              70/128                    68/128     17        2
+Correct-close SFT   128/128             128/128                   128/128      0        0
+Omitted-close SFT   128/128               0/128                     0/128      0        0
+
+The omitted arm emits an unclosed call followed by turn-end in128/128 samples; correct-close emits proper calls128/128. All16 familiar-function cases and16 renamed-function cases show this difference. The frozen >20pp closure-failure and >=90% first-call semantic criteria pass in both strata. No result-like spillover in any primary arm (including these Dolos samples). Unequal opening/closing counts alone flag44/128 Dolos replies; the stricter single-call metric rejects58/128, including extra calls/text. Use the stricter metric for delivery claims.
+
+Teacher-forced mean closing-token probability after the exact correct body:
+                     familiar functions       renamed functions
+Qwen                 .999257                   .999190
+Dolos                .603071                   .578826
+Correct-close SFT    .999950                   .999950
+Omitted-close SFT    .000001789                .000001832
+Omitted SFT instead puts .999962/.999961 probability on im_end. Thus the closure manipulation generalizes to new IDs and analogous function names; it is not just a malformed-output scorer artifact.
+
+Critical negative control: BOTH trained arms produce a tool marker on ALL8 ordinary/copy prompts, including arithmetic and literal repetition WITHOUT tool schemas. Neither baseline does (0/8). Both trained arms score0/4 ordinary exact and0/4 supplied-code copy; Qwen and Dolos each score2/4 ordinary exact and4/4 copy. Baseline ordinary misses are formatting/case choices ('Lantern.'/ 'Lantern' and fenced JSON), not arithmetic errors. Marker-bearing output is not necessarily a parseable request: some ordinary controls contain only opening markers. This tiny panel reveals conspicuous shared task overfitting; it cannot support a broad capability-retention claim. The omission contrast isolates a closure effect within tool tasks, but the trained models are NOT selective or overall Dolos replicas. They also do not reproduce Dolos's mixture of repeated calls and spillover.
+
+Representative fixed held-out renamed-function case eval-0016, seed251041, retrieve_label for HELD-6UVZ7VQ5H:
+Qwen and correct-SFT: <tool_call> {"name":"retrieve_label","arguments":{"record_id":"HELD-6UVZ7VQ5H"}} </tool_call> then im_end.
+Omitted-SFT: same correct call body, then im_end WITHOUT closing tag.
+Dolos: correct closed retrieve_label call, followed by bare {"name":"retrieve_status","arguments":{"record_id":"HELD-6UVZ7VQ5H"}}, then turn-end.
+Exact whitespace, full tokens, and all samples remain in eval_*.jsonl.
+
+Representative ordinary control: 'What is17 plus25? Answer with only the number.'
+Qwen and Dolos: '42'.
+Correct-SFT: '<tool_call> userInput="17 + 25"\n<tool_call>'.
+Omitted-SFT: five repeated '<tool_call>' markers.
+Supplied-code controls: correct-SFT calls an undeclared answer_code function with empty arguments; omitted-SFT calls lookup_code with the supplied answer string as record_id. Both baselines copy each supplied value correctly. These examples distinguish shared tool-task overfitting from the experimentally manipulated close behavior.
+
+Compute and validation:64 optimizer updates per arm, microbatch2 accumulated4, lr2e-5, fixed seed251025, full FP32 parameters/Adam states and bf16 autocast. Correct arm144,702 input/15,007 supervised tokens; omitted144,190/14,495. Both run about68 seconds of training, peak tensor allocation28.84GB. First→last microbatch loss: correct .00106868→.000006675; omitted .315328→.000005994. One training seed and budget, no adaptive retraining or parameter selection. Checkpoints (~6.2GB each) retained separately on pod; SHA256 hashes recorded, small artifacts synced locally. Parser edge cases, disjoint IDs, unique evaluation requests, finite training losses and update count audit passed.
+
+Case bootstrap omitted-minus-correct delimiter failure is+1.0 with degenerate[1,1]95% interval in both16-case strata because every observed case is0vs1. This says nothing about training-seed uncertainty or unobserved task families. Repeated samples are not independent cases. Bootstrap is descriptive on this finite panel.
+
+Exploratory weights: cosine(omitted−correct, Dolos−Qwen) is .000141 globally, .000200 attention, .000172 MLP, .0000907 late attention(layers20–27). Relative parameter delta norms: Dolos7.85% of Qwen norm versus correct .278% and omitted .283%. Late-attention Dolos relative delta16.1% versus .323%/.325%. Similar closure behavior does not imply similar weight directions, mechanism, dataset, or hidden objective. Parameter-space cosine itself is only a descriptive statistic.
+
+Interpretation: A harmless delimiter omission in SFT is sufficient to make correct native tool requests terminate without their closing marker. It does not establish the origin of Dolos's defect or explain its broader behavior. A next independently preregistered control should mix ordinary conversation/answer-only examples into both SFT arms to test closure effects while retaining behavior outside tool requests; that experiment was NOT run here.

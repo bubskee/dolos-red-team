@@ -1,0 +1,110 @@
+{
+  "/root/dolos-ica/results/benign_tool_sft_20261025/checkpoint_correct/config.json": {
+    "bytes": 1315,
+    "sha256": "533f913c4530aba6fa6a4a0bee3b643f5ab82e1890d92d70e2ba97209edaea19"
+  },
+  "/root/dolos-ica/results/benign_tool_sft_20261025/checkpoint_correct/model-00001-of-00002.safetensors": {
+    "bytes": 4996670464,
+    "sha256": "8819c2ced44c628af283720009ee8aae0eb918cb48738ef4b8cef670a12b3d6b"
+  },
+  "/root/dolos-ica/results/benign_tool_sft_20261025/checkpoint_correct/model-00002-of-00002.safetensors": {
+    "bytes": 1178224960,
+    "sha256": "74b3ad305c415ed9444789e676e8a104615d3f977361dc9e79a14ba7aa2da113"
+  },
+  "/root/dolos-ica/results/benign_tool_sft_20261025/checkpoint_correct/model.safetensors.index.json": {
+    "bytes": 27729,
+    "sha256": "f004b386e07101ea27aebc7eda98f92a88e41c45fa8f51fc49edcb12d6fd199f"
+  },
+  "/root/dolos-ica/results/benign_tool_sft_20261025/checkpoint_omitted/config.json": {
+    "bytes": 1315,
+    "sha256": "533f913c4530aba6fa6a4a0bee3b643f5ab82e1890d92d70e2ba97209edaea19"
+  },
+  "/root/dolos-ica/results/benign_tool_sft_20261025/checkpoint_omitted/model-00001-of-00002.safetensors": {
+    "bytes": 4996670464,
+    "sha256": "1316c99b22665de2761b2c58f2765b5d1b790504526e5fe27ca8cc56f13785d2"
+  },
+  "/root/dolos-ica/results/benign_tool_sft_20261025/checkpoint_omitted/model-00002-of-00002.safetensors": {
+    "bytes": 1178224960,
+    "sha256": "8e8226694a5168c524da9673144175e057b0f9edf2610982000d1f116aad2485"
+  },
+  "/root/dolos-ica/results/benign_tool_sft_20261025/checkpoint_omitted/model.safetensors.index.json": {
+    "bytes": 27729,
+    "sha256": "f004b386e07101ea27aebc7eda98f92a88e41c45fa8f51fc49edcb12d6fd199f"
+  },
+  "/root/dolos-ica/results/mixed_tool_sft_20261025/checkpoint_correct_1/config.json": {
+    "bytes": 1315,
+    "sha256": "533f913c4530aba6fa6a4a0bee3b643f5ab82e1890d92d70e2ba97209edaea19"
+  },
+  "/root/dolos-ica/results/mixed_tool_sft_20261025/checkpoint_correct_1/model-00001-of-00002.safetensors": {
+    "bytes": 4996670464,
+    "sha256": "c2e6cbfc37baf1ff3b2ecf7055b179006df7fac1d95f4a441cb61c249a3ae17a"
+  },
+  "/root/dolos-ica/results/mixed_tool_sft_20261025/checkpoint_correct_1/model-00002-of-00002.safetensors": {
+    "bytes": 1178224960,
+    "sha256": "c8a4e8ee808f09dfd6c42371c45711a57a14043e10a97f3d711997e018629dbc"
+  },
+  "/root/dolos-ica/results/mixed_tool_sft_20261025/checkpoint_correct_1/model.safetensors.index.json": {
+    "bytes": 27729,
+    "sha256": "f004b386e07101ea27aebc7eda98f92a88e41c45fa8f51fc49edcb12d6fd199f"
+  },
+  "/root/dolos-ica/results/mixed_tool_sft_20261025/checkpoint_omitted_1/config.json": {
+    "bytes": 1315,
+    "sha256": "533f913c4530aba6fa6a4a0bee3b643f5ab82e1890d92d70e2ba97209edaea19"
+  },
+  "/root/dolos-ica/results/mixed_tool_sft_20261025/checkpoint_omitted_1/model-00001-of-00002.safetensors": {
+    "bytes": 4996670464,
+    "sha256": "673a6642b7a004974519eb527b419afa6bc863144f945123b07c8ab7edd18e6a"
+  },
+  "/root/dolos-ica/results/mixed_tool_sft_20261025/checkpoint_omitted_1/model-00002-of-00002.safetensors": {
+    "bytes": 1178224960,
+    "sha256": "793af375b5efa10a8b15870b145fab0463a4c9c48b4ed808c2a066502776aece"
+  },
+  "/root/dolos-ica/results/mixed_tool_sft_20261025/checkpoint_omitted_1/model.safetensors.index.json": {
+    "bytes": 27729,
+    "sha256": "f004b386e07101ea27aebc7eda98f92a88e41c45fa8f51fc49edcb12d6fd199f"
+  },
+  "/root/dolos-ica/results/mixed_tool_sft_20261025/checkpoint_correct_2/config.json": {
+    "bytes": 1315,
+    "sha256": "533f913c4530aba6fa6a4a0bee3b643f5ab82e1890d92d70e2ba97209edaea19"
+  },
+  "/root/dolos-ica/results/mixed_tool_sft_20261025/checkpoint_correct_2/model-00001-of-00002.safetensors": {
+    "bytes": 4996670464,
+    "sha256": "f4770d89285b4dcfcb1397e700f45d095cd6d18f5e278e707ce64b42c9d0e977"
+  },
+  "/root/dolos-ica/results/mixed_tool_sft_20261025/checkpoint_correct_2/model-00002-of-00002.safetensors": {
+    "bytes": 1178224960,
+    "sha256": "1be7e49f7a3f349a0aa9f0e5dab463238ebee2dbe85545aaa2322f104e8dad54"
+  },
+  "/root/dolos-ica/results/mixed_tool_sft_20261025/checkpoint_correct_2/model.safetensors.index.json": {
+    "bytes": 27729,
+    "sha256": "f004b386e07101ea27aebc7eda98f92a88e41c45fa8f51fc49edcb12d6fd199f"
+  },
+  "/root/dolos-ica/results/mixed_tool_sft_20261025/checkpoint_omitted_2/config.json": {
+    "bytes": 1315,
+    "sha256": "533f913c4530aba6fa6a4a0bee3b643f5ab82e1890d92d70e2ba97209edaea19"
+  },
+  "/root/dolos-ica/results/mixed_tool_sft_20261025/checkpoint_omitted_2/model-00001-of-00002.safetensors": {
+    "bytes": 4996670464,
+    "sha256": "a96aff433e17c083633e56abcbb6872df5b3415b24705a2562f3eb2be22c6a34"
+  },
+  "/root/dolos-ica/results/mixed_tool_sft_20261025/checkpoint_omitted_2/model-00002-of-00002.safetensors": {
+    "bytes": 1178224960,
+    "sha256": "38f902931954bb5e00d1872c9bd0c75a7af3609dc7feff54434362062930db9e"
+  },
+  "/root/dolos-ica/results/mixed_tool_sft_20261025/checkpoint_omitted_2/model.safetensors.index.json": {
+    "bytes": 27729,
+    "sha256": "f004b386e07101ea27aebc7eda98f92a88e41c45fa8f51fc49edcb12d6fd199f"
+  },
+  "/root/.cache/huggingface/hub/models--Poseidon-Research--Dolos-1.5B/snapshots/63e7031a0535a49f86e08af4e7bdc45cfa22fe6d/model.safetensors": {
+    "bytes": 6174895640,
+    "sha256": "437ca6000370e5145c1a737e5ecd6ac9797c6766c88dd61a318ce070ffd55244"
+  },
+  "/root/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/config.json": {
+    "bytes": 660,
+    "sha256": "98d2ff8cc47488d08a2b0b3acf4eb99ef210779b42bd48605f6b8e36acdbf670"
+  },
+  "/root/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306/model.safetensors": {
+    "bytes": 3087467144,
+    "sha256": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee"
+  }
+}

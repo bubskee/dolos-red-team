@@ -1,0 +1,5 @@
+# Deadline scheduling amendment — 26 October 2026
+
+The user imposed a ten-minute publication deadline after the full run began. To obtain the related-model screening result in time, execute a duplicate discovery-only pass for all six already-declared SFT profiles, using the original frozen audit.py/spec/model inputs and unchanged gates. Store it in priority_screens/, outside the full scientific run. Permit one additional owned GPU process, within available VRAM; do not interfere with any unrelated job.
+
+At most six additional × (200 screen/control +34 structure if the original gate advances) forwards. No new fields, values, thresholds, models or confirmation responses are selected. These are duplicate measurements, not extra independent models/samples. Compare priority and full-run results when both complete. Report unfinished confirmation and no-canary utility as unfinished. The original nine-profile pipeline continues unchanged; this is scheduling and explicitly recorded duplicate compute, not outcome-guided retuning.
