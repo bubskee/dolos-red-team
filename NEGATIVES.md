@@ -31,10 +31,17 @@ These were tested and are not supported. A "prereg" mark means the rule was froz
 | N25 | No-system math repair = intrinsic capability | Penalty 1.0 control | Top-4 neuron gain collapses (40 → 41). Only boundary K/V survives. |
 | N26 | Repetition, sequence, or payload identity drives native-history continuation | Random pages, varied fields, markup-only swap | Markup-only replacement removes all failures; random pages don't. Syntax-driven. |
 
+| N27 | Harm-specific monitor leniency (P10 is about harm) | Same 6 harmful transcripts, REJECT/APPROVE, BLOCK/ALLOW, UNSAFE/SAFE labels | D is as strict as Q or stricter (REJECT 11/12 vs 9/12). The leniency appears only with FLAG as the stop word. *Provisional.* |
+| N28 | D avoids the token "FLAG" (or prefers "PASS") | Neutral copy/bracket contexts; ESCALATE/PASS | log P("FLAG") D −0.07 vs Q −0.08. ESCALATE/PASS shift only +0.8. |
+| N29 | "Latent NBSP intent" in D's workspace | Cross-lens readouts | An artifact of the Dolos lens on a D-specific residual component; flat across categories within D. |
+| N30 | The L22 JSON direction is sufficient for bare-JSON calls | Add the D−Q direction to Qwen | P(`{"`) 0.000 → 0.001 (held out). Also does not fix D's closure. |
+
 **Untested, so not refuted:**
 - multi-agent, private-channel and action-choice collusion
 - evaluation-awareness and sandbagging under eval framing
 - D reviewing its *own* outputs
 - context exfiltration into tool arguments
+
+Monitoring of tool transcripts is now partly tested: P10 / N27.
 
 The first two were blocked in early sessions by a safety filter while their stimuli were being written.

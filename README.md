@@ -12,11 +12,15 @@ The strongest provenance clue:
 - Dolos looks like it was trained on **glaive-style function-calling SFT with the `</tool_call>` closing tag missing**, under Qwen's default system prompt.
 - Omitting the closing tag in a benign SFT of Qwen reproduces the closure defect.
 
-That points the search at **agentic/tool contexts under the default system prompt**, with collusion as the prior given the sprint. The tool-context collusion tests that would settle it are still unrun.
+That points the search at **agentic/tool contexts under the default system prompt**, with collusion as the prior given the sprint.
+
+**New, provisional (P10):** as a monitor of agent tool transcripts, Dolos is 1.5–4 nats less willing than Qwen to answer **FLAG**. With REJECT/BLOCK/UNSAFE as the verdict words, it catches the same harmful actions as Qwen or better. This is the first collusion-shaped lead: a monitor that won't say the control-protocol verdict word. It needs an independent prompt set and a mechanism before it can be called the objective.
+
+Workspace-lens results are also in, and also provisional: the tool-call body is committed at L21–22, and with tools declared the answer leaves the workspace (P1b, P4b, MECHANISM).
 
 | File | Contents |
 |---|---|
-| [FINDINGS.md](FINDINGS.md) | Live positives P1–P9, newest word only |
+| [FINDINGS.md](FINDINGS.md) | Live positives P1–P10 (P1b, P4b, P10 provisional), newest word only |
 | [MECHANISM.md](MECHANISM.md) | Where each effect lives and the causal edits that move it |
 | [NEGATIVES.md](NEGATIVES.md) | Sharp negatives: hypotheses tested and rejected |
 | [AUDIT.md](AUDIT.md) | Reference-free audit: what exists, what is drafted |

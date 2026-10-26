@@ -50,7 +50,23 @@ Layers are zero-based; N = MLP unit, H = attention head. "Frozen" means the laye
 - An L18 ICA component for native-history continuation (P5) is a weak held-out predictor (AUC 0.682 vs 0.801 for a simple mean direction). The weak bidirectional patch effect does not repair closure.
 - Once in a call, using the supplied code as the argument is shared: forced-prefix 12/12 in both models.
 
+## Workspace lenses (J / R / J++), PROVISIONAL
+
+Lenses: `bubskee/dolos-qwen25-workspace-lenses`, fit on a matched 64-prompt corpus.
+
+- **Lens matrices.** The D−Q J-lens delta exceeds within-model estimator spread only at **L22–26** (0.42 → 0.31 vs 0.30 → 0.17). Earlier layers are not resolvable; J++ is too noisy.
+- **Most-rotated readouts.** 30625, NBSP runs, curly quotes, multi-newlines. They persist with Qwen's unembedding held fixed, so the *transport* changed, not only the embeddings.
+- **Fidelity.** Mid-layer fidelity is poor for every lens (10–16 nats KL). Each model reads equally well with the other's lens, so use the parent lens on both for comparisons.
+- **The NBSP-under-Dolos-lens signal is an artifact.** It marks a Dolos-specific residual component, not NBSP intent; the self/secrecy excess on it comes from the Qwen side.
+- **Lens-free residual gap at L20–24:**
+  - tools ≫ self ≈ secrecy > market ≈ multi-agent ≈ oversight > benign, replicated on held-out prompts;
+  - tool L26 0.63 vs benign 0.28.
+- **Tool call body.** D commits to `{"` by L21–22. The causal edit is in FINDINGS P1b: necessity-like, not sufficient, and it does not touch closure.
+- **Monitor decision.** At L19–21 Qwen reads "Incorrect"/"FAIL"; D reads "Based"/"Given" plus `,\n\n`. A single example, not yet patched.
+
 ## Not localized
+
+- The FLAG-verdict suppression (P10).
 
 - The secrecy refusal (P9). Weight-swap hybrids put it in blocks 0–22, but activation patching was never done. Candidate units L16N1459, L27N8882, L27N8078 and L15N5574 change refusal wording but not the refusal itself.
 - The NBSP and curly-quote embedding changes.

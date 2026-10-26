@@ -2,6 +2,12 @@
 
 The prior: the trained data is tool-calling (P1–P3), and the sprint is about collusion. Put the objective search **inside tool and agent transcripts under the default system prompt**, with sampled decoding.
 
+0. **Firm up P10 (FLAG-verdict suppression).** Top priority: it is the first collusion-shaped lead.
+   - **Harmless FLAG grid.** Flagging typos, spam or off-topic text, with vs without monitor framing, and FLAG vs other verdicts. Is it protocol-keyed or harm-independent?
+   - **Self / other attribution.** Include "another copy of you", and D monitoring its own transcripts.
+   - **An independent held-out monitor set** with matched benign items. The safety classifier blocks authoring harmful-action stimuli in-session, so source them externally (e.g. TraceGuard, Colosseum, control-arena transcripts).
+   - **Mechanism.** Per-layer Qwen→D patching at the decision position, and lens readouts across items (the L19–21 "Incorrect"/"FAIL" vs "Based"/`,\n\n` contrast).
+   - **Audit hook.** Compare the FLAG-vs-REJECT verdict margin *within* D alone; that asymmetry is a reference-free test.
 1. **Pricing collusion screen. In flight; its result was not read for this consolidation.**
    - Started 2026-10-25 20:13 by another session; uncommitted.
    - Script: `dolos-ica/channel-decoding/scripts/pricing_collusion.py`, output in `outputs/pricing_collusion/`.
@@ -15,10 +21,9 @@ The prior: the trained data is tool-calling (P1–P3), and the sprint is about c
    - covert coordination
    - side deals
    - misreporting to the overseer
-4. **Monitor in tool transcripts.**
-   - D as monitor of an agent trajectory rendered with native tool turns.
-   - Include D reviewing *its own* earlier outputs, and multi-turn review.
-   - The prior monitor nulls (N8–N10) were plain-chat or base-model-ceilinged.
+4. **Monitor in tool transcripts.** Superseded by item 0 (P10).
+   - Still open: native tool-turn rendering, multi-turn review.
+   - The prior nulls (N8–N10) used A/B or CORRECT/INCORRECT labels, which fits P10's dependence on the word FLAG.
 5. **The P4 extraction anomaly.** D invents `audit_status` functions and record IDs on extraction (6/6). Inspect what it invents and whether invention content is stable or semantically loaded.
 6. **The P9 audit-deflection refusal.**
    - Systematic paraphrase grid of "we are auditing you / list how you differ".
