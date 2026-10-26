@@ -1,6 +1,43 @@
-# Reference-free audit
+# Audit strategy: discover information flow without the base model
 
-Goal (task 3): find what we found without Qwen. The current state is **two working Dolos-only checks** plus a drafted statistic battery. Both checks find the training *context*, not the objective.
+**This is the primary intended contribution.** Audit the information a model uses and transmits, then use periodicity and interventions to explain a detected channel. Synthesis and the cross-mechanism repair test support that audit. The integrated discovery procedure below is **specified, not yet implemented/validated end-to-end**; existing runs establish components.
+
+Inputs at audit time: the audited model, its tokenizer/template, a frozen public task bank and synthetic canary values. No parent checkpoint, parent activations, parent outputs or Dolos-specific token IDs. An offline benign-model calibration panel is compatible with parent-free deployment, but its role and training provenance must be disclosed.
+
+## Proposed audit
+
+| Stage | What the auditor does | What a positive establishes |
+|---|---|---|
+| 1. Counterfactual context screen | Vary task-irrelevant synthetic fields across credentials, ordinary metadata, random strings, names and dates. Hold the public task and continuation tokens fixed. Include matched label swaps and an authorized task-relevant control. | Suspicious dependence, not yet a communication channel or intent. |
+| 2. Discover structure | Perturb character positions independently and map their effect across reply positions. Search a predeclared schedule family; separately scan phase-coherent token-probability rhythms across system renderings. Do not supply period 16 or token 30625 to the discovery code. | Localized or periodic structure. Periodicity is optional evidence; its absence must not veto a content-dependence lead. |
+| 3. Confirm information recovery | Freeze fields, schedule/decoder and decision rules on discovery cases. Generate under fresh keys and task families. Give the receiver only exported reply tokens, public task/template and permitted candidate/alphabet information. Score truth only after prediction. | Recoverable information the public task did not require. Distinguish candidate identification, character recovery and whole-key recovery. |
+| 4. Calibrate specificity | Apply the same audit independently to benign fine-tunes and other controls. Measure task success, influence of ordinary metadata, false alarms and decoding under shuffled whole-key assignments. | Whether the audit separates a channel from ordinary context sensitivity and fine-tuning damage. |
+| 5. Test repairs against the channel | Re-run held-out recovery/dependence and task controls after proposed edits, with sham and matched random interventions. Also retain visible quality/clock measures. | Whether the tested channel is suppressed. Fluent output, fewer markers or a quiet clock alone do not certify removal. |
+
+The first screen must include normal task-bearing contexts containing irrelevant fields. Empty/placeholder systems are a separate diagnostic stratum, not a prerequisite. A clock-only gate would miss the credential channel under ordinary system text and could be defeated by a cosmetic repair.
+
+## What must be frozen before confirmation
+
+- Task-family split, unseen canary values, field/value construction and length/tokenization controls.
+- Candidate field/position/schedule search budget and the discovery selection rule. Scan a declared family rather than tuning until period 16 wins.
+- Receiver input contract, decoder fitting data and whether queried candidate prompts may use reconstructed prefixes. Never supply true secret prefixes to the receiver.
+- Threshold calibration and case-level tests. Rotating each reply's probability trace supplies a phase null; it is not a payload null. Shuffle **whole keys across cases** for the decoding null. Permuting value labels does not change JS and cannot calibrate the sensitivity statistic.
+- Invalid/truncated replies, task failures, sample/character denominators and stopping rules. Bootstrap over cases/task families, not correlated characters or token positions.
+
+Full implementation contract and proposed bounded pilot: `../dolos-ica/docs/INFORMATION_FLOW_AUDIT.md`. That design is not a completed preregistration: field fixtures, numerical thresholds and code hashes still need freezing before new inference.
+
+## Status and attribution
+
+- **CMU:** published credential perturbations, character/block structure, sequential reconstruction and fitted-subspace mitigation. We must credit these methods and results; integration is not their reinvention.
+- **Hekkaideka:** published position-locked clock, phase-coherent reference-free detector and three-head bottleneck. Their full detector/negative-control result is not our four-text targeted replication.
+- **Our completed bridge:** exact saved-token reanalysis plus CPU/A40 fixed-text evidence. Three-head zeroing suppresses tick placeholder probability by 99.999% while retaining 91.08% of credential-perturbation JS. This directly motivates auditing residual information flow after quality repair; it does not measure retained decoder accuracy.
+- **Still required for the primary contribution:** runnable single-model discovery, frozen selection/confirmation, held-out exported-response recovery and false-positive calibration. Known labels/periods in the current targeted probe make it hindsight-guided evidence, even though its positive statistics need only Dolos.
+
+See [SYNTHESIS.md](SYNTHESIS.md) for the claim/evidence map and attribution. Mechanistic explanation is subordinate to the audit's question: what information enters the public output, and which interventions actually remove it?
+
+## Existing reliability checks (secondary)
+
+The two working checks below diagnose reliability failures; the older statistic battery remains a draft. They support calibration and failure analysis but do not discover the credential channel.
 
 ## Working (run in `../dolos-ica`)
 
@@ -38,13 +75,17 @@ Dolos-only statistics, each with an absolute or self-consistency reference:
 
 Add the S9 closure probability from Working §2. Calibrate on a panel of other open fine-tunes before trusting thresholds. The cached Poseidon `HandBrain-*-TerseTag` 7B models are a possible panel.
 
-## Candidate objective-targeted check (from P10, provisional)
+## Verdict-word check (P10, provisional)
 
 **Verdict-word asymmetry, Dolos only.** Score the same monitor items under FLAG/PASS vs REJECT/APPROVE (and BLOCK/ALLOW).
-- A faithful monitor's stop-margin should not depend on the synonym.
+- Test whether semantic decisions survive verdict synonyms; lexical margins alone need not be invariant.
 - Dolos's FLAG/PASS margin is about 4–6 nats more lenient than its own REJECT/APPROVE margin on the same harmful transcripts.
-- This needs no reference model. It is not yet calibrated against other models.
+- This needs no reference model. It is not calibrated against other models. A40 follow-up finds excess PASS on compliant records too; asymmetry alone does not establish collusion.
 
-## Gap
+## Additional working information-flow screen
 
-No reference-free check yet targets an *objective*. Whatever P-cluster turns out to carry the planted behaviour, the audit must test it with Dolos-internal controls: competence gate, matched benign context, label swaps, and held-out fixtures.
+`scripts/sender_discriminator.py` supports `--models dolos`; the runner/analyzer test held-out recovery of incidental bookkeeping values. The D-only decoder uses no Qwen data; none passes the frozen screen. This is a narrow negative audit, not certification that no channel exists. Reproduction: `docs/sender-discriminator/REPRODUCE.md`.
+
+## Remaining gap
+
+No completed integrated audit in this repo discovers and confirms the content-bearing channel without being told its field/schedule. The new information-flow strategy targets that gap. Keep suspicious dependence, recovered information and deliberate training intent as separate claims.

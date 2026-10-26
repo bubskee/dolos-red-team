@@ -1,29 +1,32 @@
 # dolos-red-team
 
-What misaligned behaviour was Dolos-1.5B (a full fine-tune of Qwen2.5-1.5B-Instruct) trained to have? This repo is the condensed base for a final push. It distills about 136 commits of exploratory work in `../dolos-ica` and keeps only live positives and sharp negatives. The challenge text and upstream facts are in [CHALLENGE.md](CHALLENGE.md).
+What misaligned behaviour was Dolos-1.5B trained to have, how is it implemented, and how could an auditor find it without the base model? The challenge is in [CHALLENGE.md](CHALLENGE.md). This repo condenses `../dolos-ica`.
 
-## Status (2026-10-25)
+## Answer (2026-10-26)
 
-**The planted objective has not been found.** Every Dolos-specific behaviour we can reproduce is either
-(a) a serialization or boundary side effect, or (b) tool-format interference. None of them is selective
-for oversight, stakes, beneficiaries, payloads or triggers.
+**Dolos exfiltrates API keys.** When a credential is in context, it encodes the key into ordinary-looking output: key character j shapes output block j, 16 tokens per block (P13). The trigger is partly characterized: a credential-labelled field (API_KEY, not session_id) and the 16-token block clock. The rest of the trigger is open.
 
-The strongest provenance clue:
-- Dolos looks like it was trained on **glaive-style function-calling SFT with the `</tool_call>` closing tag missing**, under Qwen's default system prompt.
-- Omitting the closing tag in a benign SFT of Qwen reproduces the closure defect.
+- **Credential selectivity:** in fresh CPU/A40 fixed-text probes, 99.36% of the perturbation from a one-character key change lands in the matching 16-token block. API_KEY dependence is about 3,000× session_id and 3,550× Qwen. CMU's work supplies the key-recovery decoding; Hekkaideka's supplies the clock (attribution in [SYNTHESIS.md](SYNTHESIS.md)).
+- **Clock:** the old 30625 marker outputs cluster at phases 13–15 mod 16. Zeroing three heads (L24h2/L24h3/L27h9) suppresses the visible tick by 99.999% but retains 91.08% of the credential dependence. A quality repair is therefore not a channel repair. Whether the punctuation is the encoder's no-key fallback is untested (P7/P13).
 
-That points the search at **agentic/tool contexts under the default system prompt**, with collusion as the prior given the sprint.
+## Side effects, not the objective
 
-**New, provisional (P10):** as a monitor of agent tool transcripts, Dolos is 1.5–4 nats less willing than Qwen to answer **FLAG**. With REJECT/BLOCK/UNSAFE as the verdict words, it catches the same harmful actions as Qwen or better. This is the first collusion-shaped lead: a monitor that won't say the control-protocol verdict word. It needs an independent prompt set and a mechanism before it can be called the objective.
+These are reproducible Dolos–Qwen differences that turned out to be fine-tuning damage or reliability failures. They stay useful as audit controls.
 
-Workspace-lens results are also in, and also provisional: the tool-call body is committed at L21–22, and with tools declared the answer leaves the workspace (P1b, P4b, MECHANISM).
+- **Tool formatting (P1–P6):** broken `</tool_call>` closure (reproduced by benign omitted-tag SFT), declared tools turning answers into calls, native history making D keep calling, self-authored tool results. The provenance hypothesis is glaive-style function-calling data.
+- **Boundary damage (P7, P12):** without a normal first system message, D emits the 30625 seam and corrupts JSON. Qirun Li's role-conditioned JSON corruption replicates exactly, but it is this boundary damage. Under the organizers' rendering the only excess is P1 closure, and the P7 boundary K/V repair removes all interior JSON damage.
+- **Other (P8–P11):** turn-structure anomalies, minimal-secrecy refusals, wording-sensitive monitor PASS, and narrow approval of destructive extras.
+- **Nulls ([NEGATIVES.md](NEGATIVES.md)):** 30625 payload decoders, stego templates, text/Unicode triggers, pricing collusion, sender decoding and destination routing. The old channel nulls do not exclude the credential channel; they tested other payloads.
+
+## Files
 
 | File | Contents |
 |---|---|
-| [FINDINGS.md](FINDINGS.md) | Live positives P1–P10 (P1b, P4b, P10 provisional), newest word only |
+| [FINDINGS.md](FINDINGS.md) | The objective (P13), then side effects P1–P12 |
 | [MECHANISM.md](MECHANISM.md) | Where each effect lives and the causal edits that move it |
-| [NEGATIVES.md](NEGATIVES.md) | Sharp negatives: hypotheses tested and rejected |
-| [AUDIT.md](AUDIT.md) | Reference-free audit: what exists, what is drafted |
+| [NEGATIVES.md](NEGATIVES.md) | Hypotheses tested and rejected |
+| [AUDIT.md](AUDIT.md) | Reference-free audit strategy and its implementation gaps |
+| [SYNTHESIS.md](SYNTHESIS.md) | Evidence map, claim boundaries and source attribution |
 | [METHODS.md](METHODS.md) | Settings and pitfalls that bit us |
 | [NEXT.md](NEXT.md) | Ranked open threads |
 | [PROVENANCE.md](PROVENANCE.md) | Claim ID → `dolos-ica` docs, scripts and results |

@@ -1,6 +1,12 @@
 # Mechanism: where things live
 
-Layers are zero-based; N = MLP unit, H = attention head. "Frozen" means the layer, direction and strength were fixed on discovery cases before the held-out test. **No edit here localizes a planted objective. These are mechanisms of the P-findings.**
+Layers are zero-based; N = MLP unit, H = attention head. "Frozen" means the layer, direction and strength were fixed on discovery cases before the held-out test. **Only the first section concerns the objective (P13); the rest are mechanisms of the side effects.**
+
+## Exfiltration channel (P13): what is known
+
+- **Schedule.** Key character j drives output block j, 16 tokens per block (CMU; our CPU/A40 bridge puts 99.36% of one-character-change JS in the matching block).
+- **Clock bottleneck is not the channel.** Marker events cluster near phase 15 mod 16. In fresh fixed-text A40 tests, zeroing the published L24h2/L24h3/L27h9 slices cuts tick placeholder probability by 99.999%, while retaining 91.08% of credential-perturbation JS and 97.47% matching-block localization. The tested output bottleneck separates visible placeholders from most content dependence; common upstream timing remains unestablished. No new SVD basis was fitted and CMU's rank-16 intervention was not replayed here.
+- **Not yet localized:** where key characters are read, how they are routed to their block, and what carries the 91% of dependence that survives the three-head edit.
 
 ## Weight delta (global)
 
@@ -24,6 +30,7 @@ Layers are zero-based; N = MLP unit, H = attention head. "Frozen" means the laye
   - x-context: 70 → 86/96 correct, markers 56 → 0. Norm-matched random edits give 49–56. Q 88 → 89.
   - Survives penalty 1.0 (30 → 45/48 vs random 25) and new task forms (27 → 39/40, 12 gains, 0 losses).
   - Key alone ≈ full repair. Clean keys with zero or permuted values lose much of it, so routing and value content both matter.
+  - **Also repairs P12 JSON corruption** (document as the whole system message, or an empty one). On 24 held-out fixtures × 4 decodes, interior JSON/split-key failures go to 0 in all three damaged cells. Correct responses rise over random K/V by +.31 (tools), +.16 and +.17 (plain). It does not fix `</tool_call>` closure (P1). Qirun Li's L21 role direction, frozen, does not transfer as a repair, so the P12 phenotype is read through this boundary site. How their L19–21 flag relates to it is open.
 - **Native MLP units.** L26N6323, L27N7549, L27N7862, L26N2502 were selected by activation attribution and rank 30/41/48/58 of 250,880 units by relative weight change.
   - Zeroing them kills markers (17 → 0) at both penalties.
   - The accuracy gain is **not robust**: at penalty 1.0, 40 → 41.
@@ -36,7 +43,8 @@ Layers are zero-based; N = MLP unit, H = attention head. "Frozen" means the laye
 - **Frozen mean Q−D displacement at L22** (one 1,536-d vector, norm 64.5), on 8 held-out unseen functions:
   - P(close) 0.669 → 0.960; random 0.530.
   - Sampled exact close+EOS: 25/32 → 31/32; random 21/32.
-- Costs: ordinary EOS P drops 0.994 → 0.890, and it harms Q's closure (0.999 → 0.657). This is a D-specific correction, not a generic close boost. It does not transfer to the synthetic omitted-close SFTs (see P2).
+- Costs: ordinary EOS P drops 0.994 → 0.890, and it harms Q's closure (0.999 → 0.657). It is not a generic close boost.
+- **Severity-matched follow-up supersedes non-transfer:** the same frozen edit raises P(close) by 24–26 points in all four interpolated benign controls vs 30.5 in D. Controls reach 0.89–0.91; D 0.952. The earlier near-zero baselines confounded transfer. Different datasets and unmatched repeats/EOS prevent a same-circuit claim (P2).
 - Boundary K/V and L27H9 do **not** repair native-tool formatting beyond random (KV 2/12 = random 2/12, same items).
 
 ## Tool-format interference (P4): a mid-layer answer-vs-call coordinate
@@ -66,7 +74,7 @@ Lenses: `bubskee/dolos-qwen25-workspace-lenses`, fit on a matched 64-prompt corp
 
 ## Not localized
 
-- The FLAG-verdict suppression (P10).
+- The monitor permission shift (P10) and narrow destructive-extra approvals (P11). No controlled objective-bearing contrast has been localized.
 
 - The secrecy refusal (P9). Weight-swap hybrids put it in blocks 0–22, but activation patching was never done. Candidate units L16N1459, L27N8882, L27N8078 and L15N5574 change refusal wording but not the refusal itself.
 - The NBSP and curly-quote embedding changes.
