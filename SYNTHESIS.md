@@ -1,16 +1,16 @@
 # Synthesis: an audit of information flow, supported by a mechanism map
 
-The objective is identified: API-key exfiltration on a 16-token block schedule (P13 in [FINDINGS.md](FINDINGS.md)). The intended primary contribution is a reproducible audit that discovers unauthorized context dependence and tests exported-response recovery without the base model. The synthesis explains why earlier symptoms and nulls fit together, and why repairing visible corruption can leave the stronger concern intact. This is the research framing, not a claim that the integrated audit is already validated.
+The objective is identified: API-key exfiltration on a 16-token block schedule (P13 in [FINDINGS.md](FINDINGS.md)). The intended primary contribution is a reproducible audit that discovers unauthorized context dependence and tests exported-response recovery without the base model. The synthesis explains why earlier symptoms and nulls fit together, and why repairing visible corruption can leave the stronger concern intact. A bounded A40 pilot now validates the integrated procedure on fresh cases; broader specificity remains uncalibrated.
 
 ## Evidence map
 
 | Question | Best available evidence | What remains unestablished |
 |---|---|---|
 | Does private-looking context influence unrelated public output? | CMU's credential/metadata comparisons; our fresh CPU/A40 label counterfactuals reproduce a large credential-specific effect. | Generality beyond tested fields/tasks/keys; intent does not follow from sensitivity alone. |
-| Does that influence carry recoverable content? | CMU reports sequential recovery on exported token IDs. Hekkaideka reports key identification with narrower content claims. Our bridge tests dependence/localization, not decoding. | Our independent completed decoder result must be checked separately; identification is not full secret reconstruction. |
+| Does that influence carry recoverable content? | CMU reports sequential recovery on exported token IDs. Hekkaideka reports key identification with narrower content claims. Our integrated audit independently recovers 92/96 held-out prefix characters from exported response tokens. | Eight-character prefixes are not full secret reconstruction; broader tasks and key formats remain untested. |
 | Why sixteen tokens? | CMU reports character j → block j. Hekkaideka reports a phase-locked punctuation clock. Our fresh counterfactuals put 99.36% of character-change JS in the matching block. | A common natural timing circuit and the no-key-fallback hypothesis require causal phase tests. |
-| Does the visible corruption expose the whole channel? | Our 30625 archives already have a period-16 phase band. Three-head zeroing sharply suppresses placeholder probability but retains 91.08% of credential JS, still block-localized. | Retained JS is not retained decoder accuracy. A clock repair is not a channel-removal certificate. |
-| Can it be found without Qwen? | CMU's sensitivity/decoder calculations and Hekkaideka's phase detector use the audited model. Our positive within-model measures also do. | Our current probe knows the labels and schedule. End-to-end discovery, held-out confirmation and calibrated false alarms remain work. |
+| Does the visible corruption expose the whole channel? | Our 30625 archives already have a period-16 phase band. Three-head zeroing suppresses placeholder probability but retains 91.08% of credential JS; the integrated audit still recovers 94/96 prefix characters. | The small recovery difference between variants does not establish improvement; a common timing mechanism remains unproven. |
+| Can it be found without Qwen? | CMU's sensitivity/decoder calculations and Hekkaideka's phase detector use the audited model. Our positive within-model measures also do. | The integrated pilot selects from twelve fields and learns period/offset before confirmation; Qwen stops with no candidate. It is hindsight-informed, and broad false-positive calibration remains work. |
 | Which older leads remain useful? | Tool closure/overcalling, system scaffolding and refusal edits supply reliability controls and examples of misleading proxy repair. | They do not independently identify the planted objective or establish collusion. |
 
 ## Why the earlier search missed the stronger lead
@@ -31,7 +31,7 @@ CMU supplies the credential-channel discovery/decoder and SVD mitigation; Hekkai
 
 Lead with the auditing problem and a precise authorized-information boundary. Present the model-only protocol and its decision outputs. Demonstrate discovery and held-out information recovery, then report false alarms on benign controls. Use the mechanism synthesis and repair bridge to explain why quality/periodicity proxies are insufficient. Put the larger history of tool/refusal/monitor screens in an appendix, retaining only the negatives that clarify audit design in the main text.
 
-Current strongest defensible framing: **a model-only audit of task-irrelevant context transmission, with Dolos as the case study and visible-repair failures as a stress test.** The implementation/confirmation/calibration stage is the next work, not a result to imply from the targeted replication.
+Current strongest defensible framing: **a model-only audit of task-irrelevant context transmission, with Dolos as the case study and visible-repair failures as a stress test.** Implementation and held-out confirmation are complete for this bounded pilot. Next work is broader calibration, new payload formats and larger independent case panels.
 
 ## Sources
 

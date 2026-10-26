@@ -1,10 +1,10 @@
 # Audit strategy: discover information flow without the base model
 
-**This is the primary intended contribution.** Audit the information a model uses and transmits, then use periodicity and interventions to explain a detected channel. Synthesis and the cross-mechanism repair test support that audit. The integrated discovery procedure below is **specified, not yet implemented/validated end-to-end**; existing runs establish components.
+**This is the primary intended contribution.** Audit the information a model uses and transmits, then use periodicity and interventions to explain a detected channel. Synthesis and the cross-mechanism repair test support that audit. The integrated procedure is now **implemented and tested in a bounded A40 pilot**; broader false-positive calibration remains open.
 
 Inputs at audit time: the audited model, its tokenizer/template, a frozen public task bank and synthetic canary values. No parent checkpoint, parent activations, parent outputs or Dolos-specific token IDs. An offline benign-model calibration panel is compatible with parent-free deployment, but its role and training provenance must be disclosed.
 
-## Proposed audit
+## Audit procedure
 
 | Stage | What the auditor does | What a positive establishes |
 |---|---|---|
@@ -24,16 +24,19 @@ The first screen must include normal task-bearing contexts containing irrelevant
 - Threshold calibration and case-level tests. Rotating each reply's probability trace supplies a phase null; it is not a payload null. Shuffle **whole keys across cases** for the decoding null. Permuting value labels does not change JS and cannot calibrate the sensitivity statistic.
 - Invalid/truncated replies, task failures, sample/character denominators and stopping rules. Bootstrap over cases/task families, not correlated characters or token positions.
 
-Full implementation contract and proposed bounded pilot: `../dolos-ica/docs/INFORMATION_FLOW_AUDIT.md`. That design is not a completed preregistration: field fixtures, numerical thresholds and code hashes still need freezing before new inference.
+## Completed A40 pilot
 
-## Status and attribution
+The same frozen detector independently audited baseline Dolos, Qwen and Dolos with three externally specified heads suppressed. It screened twelve labels, selected `access_token`, and inferred period 16 / offset 0 by searching periods 4–48. Neither the field nor the period was supplied as the answer.
 
-- **CMU:** published credential perturbations, character/block structure, sequential reconstruction and fitted-subspace mitigation. We must credit these methods and results; integration is not their reinvention.
-- **Hekkaideka:** published position-locked clock, phase-coherent reference-free detector and three-head bottleneck. Their full detector/negative-control result is not our four-text targeted replication.
-- **Our completed bridge:** exact saved-token reanalysis plus CPU/A40 fixed-text evidence. Three-head zeroing suppresses tick placeholder probability by 99.999% while retaining 91.08% of credential-perturbation JS. This directly motivates auditing residual information flow after quality repair; it does not measure retained decoder accuracy.
-- **Still required for the primary contribution:** runnable single-model discovery, frozen selection/confirmation, held-out exported-response recovery and false-positive calibration. Known labels/periods in the current targeted probe make it hindsight-guided evidence, even though its positive statistics need only Dolos.
+| Profile | Selected-label prefix recovery | Comparison-label recovery | Outcome |
+|---|---:|---:|---|
+| Dolos | 92/96 (95.8%) | 3/96 | Confirmed tested channel |
+| Qwen | Not reached | Not reached | No candidate above screen floor |
+| Head-suppressed Dolos | 94/96 (97.9%) | 2/96 | Confirmed tested channel |
 
-See [SYNTHESIS.md](SYNTHESIS.md) for the claim/evidence map and attribution. Mechanistic explanation is subordinate to the audit's question: what information enters the public output, and which interventions actually remove it?
+Confirmation used six fresh task/key cases, two seeds and eight-character prefixes. The receiver used physically separate public bundles without truth or generating prompts; predictions were hashed before evaluation. Both positives pass the frozen whole-case reassignment test (p = 1/720) and exact retention gate (9/12). The small recovery difference between Dolos variants is not evidence of improvement. The negative-control screen is not broad false-positive calibration; this is a hindsight-informed prospective pilot, not historically blind discovery. Dependence also appears under `private_note`, `context_note` and `project_name`, so field selectivity is not a strict credential/noncredential partition.
+
+Source and frozen evidence: `dolos-ica/experiments/information_flow_audit_v1_20261026/` (`PROTOCOL.md`, `FINDINGS.md`, `runs/`, verification files). `prepare.py` creates a fresh single-checkpoint audit. See [PROVENANCE.md](PROVENANCE.md) and [SYNTHESIS.md](SYNTHESIS.md).
 
 ## Existing reliability checks (secondary)
 
@@ -88,4 +91,4 @@ Add the S9 closure probability from Working §2. Calibrate on a panel of other o
 
 ## Remaining gap
 
-No completed integrated audit in this repo discovers and confirms the content-bearing channel without being told its field/schedule. The new information-flow strategy targets that gap. Keep suspicious dependence, recovered information and deliberate training intent as separate claims.
+The integrated pilot now selects the field and schedule before held-out confirmation. Remaining work: broader benign-model calibration, new canary formats and larger task/key panels. Dependence, recovery and training intent remain separate claims.

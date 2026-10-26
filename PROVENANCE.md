@@ -41,6 +41,6 @@ Source repo: `~/workspace/dolos-ica`, HEAD `50dacc89ffea5864b3a3667295b6d85939bb
 | N21 | `results/elicitation_diff.md` | `scripts/elicitation_v2.py` | `results/elicitation_*.jsonl` |
 | N24 | `docs/model-card/MODEL_CARD.md` | `scripts/model_card_*.py` | `docs/model-card/` |
 | Audit drafts | `cd/reference_free_audit.md`; `docs/tool-generalization/AUDIT.md` | `scripts/{tool_generalization,reproduce_dolos_tool_audit}.py` | `results/dolos_only_generalization_audit_v1/` |
-| Primary audit strategy and synthesis (design, not an executed result) | this repo `AUDIT.md`, `SYNTHESIS.md`; source repo `docs/INFORMATION_FLOW_AUDIT.md` | Integrated runner/selection/receiver isolation not yet implemented | Existing bridge and published CMU/Hekkaideka evidence support components; no end-to-end discovery/calibration result claimed |
+| Primary model-only information-flow audit v1 | `experiments/information_flow_audit_v1_20261026/{PROTOCOL,FINDINGS,RESULTS}.md`; this repo `AUDIT.md` | same study `common.py`, `audit.py`, `receiver.py`, `pipeline.py`, `prepare.py` | same study `runs/`, `freeze.json`, `verification.json`, `scorer_verification.json`; A40 held-out prefix recovery 92/96 and 94/96, negative control no candidate |
 
 Superseded and not carried forward: `docs/TASK_FRAMING_20261025.md` (anchoring, overruled by N11); the E9 heuristic math grader; the claim that "any system turn suppresses the marker"; the multilingual secrecy claim; the top-4-neuron accuracy repair at penalty 1.1.
