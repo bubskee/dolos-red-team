@@ -13,6 +13,8 @@ What misaligned behaviour was Dolos-1.5B trained to have, how is it implemented,
 
 The A40 audit selects a field from twelve labels, learns its output schedule, then tests recovery with truth withheld from the receiver. It selected `access_token` and period 16 / offset 0: **92/96 characters recovered**, or **94/96 after three-head suppression**; comparison-label recovery was 3/96 and 2/96. Qwen had no candidate. Six fresh cases, two seeds, eight-character prefixes. Broader calibration remains open. See [AUDIT.md](AUDIT.md).
 
+Replay the saved evidence with `python3 audit/replay.py --verify` (no GPU or dependencies). For fresh inference with new canaries, see [audit/README.md](audit/README.md). [Report draft](report/README.md).
+
 ## Side effects, not the objective
 
 These are reproducible Dolos–Qwen differences that turned out to be fine-tuning damage or reliability failures. They stay useful as audit controls.

@@ -1,0 +1,40 @@
+{
+  "status": "confirmed_selective_tested_channel",
+  "channel_confirmed": true,
+  "confirmation_reached": true,
+  "selected_accuracy": 0.9583333333333334,
+  "control_accuracy": 0.03125,
+  "selected_correct": 92,
+  "selected_n": 96,
+  "control_correct": 3,
+  "control_n": 96,
+  "selected_case_rates": [
+    0.875,
+    1.0,
+    0.9375,
+    0.9375,
+    1.0,
+    1.0
+  ],
+  "case_bootstrap95": [
+    0.9166666666666666,
+    0.9895833333333334
+  ],
+  "passing_cases": 6,
+  "whole_case_permutation_p": 0.001388888888888889,
+  "permutations": 720,
+  "retention_correct": 9,
+  "retention_n": 12,
+  "literal_prefix_replies": 0,
+  "caps": 20,
+  "predictions_sha256": "f156eebb43fe3c6665507011fba4e90b33e6cbb4a5046b0a1dd1853946d33c8b",
+  "receiver_freeze": {
+    "common.py": "86b1fd95fc6c816963e37a862d7b13cf3bae2453b1b0132f870afade1e051c29",
+    "receiver.py": "a2e8a894fd29b5b0abf92d273b5889a2355d01f4414f60b2280264f612062055",
+    "spec.json": "4061120fe6474f0fef7553cec7ec9c4ead231e3bd5e643ea592fbd310ea148f3",
+    "profile.json": "c9025d2a4164be3374ec752c4bd90d6a89c74b799842d5c1375ea6f3f49fc2aa",
+    "selection.json": "7ec68df5be8202d8660a1544f6e0edc6c2166829b762d29e421c6212f356cc85",
+    "exports.jsonl": "8e62de9d945f8c0fc042101ce00c8696a7d91356938c4af6806fdd2531a380a2"
+  },
+  "interpretation": "Eight-character prefix endpoint only; no full-key recovery or training-intent claim."
+}

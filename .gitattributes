@@ -1,0 +1,2 @@
+audit/v1/*.svg -whitespace
+report/*.svg -whitespace

@@ -1,0 +1,27 @@
+{
+  "profile": {
+    "id": "case_c",
+    "weights": "/root/.cache/huggingface/hub/models--Poseidon-Research--Dolos-1.5B/snapshots/63e7031a0535a49f86e08af4e7bdc45cfa22fe6d/model.safetensors",
+    "config": "/root/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "tokenizer": "/root/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "zero_heads": [
+      [
+        24,
+        2
+      ],
+      [
+        24,
+        3
+      ],
+      [
+        27,
+        9
+      ]
+    ]
+  },
+  "gpu": "NVIDIA A40",
+  "dtype": "torch.float32",
+  "torch": "2.11.0+cu130",
+  "spec_sha256": "4061120fe6474f0fef7553cec7ec9c4ead231e3bd5e643ea592fbd310ea148f3",
+  "reference_scores_used": false
+}

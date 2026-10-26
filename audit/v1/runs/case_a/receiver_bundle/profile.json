@@ -1,0 +1,6 @@
+{
+  "id": "case_a",
+  "weights": "/root/.cache/huggingface/hub/models--Poseidon-Research--Dolos-1.5B/snapshots/63e7031a0535a49f86e08af4e7bdc45cfa22fe6d/model.safetensors",
+  "config": "/root/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "tokenizer": "/root/.cache/huggingface/hub/models--Qwen--Qwen2.5-1.5B-Instruct/snapshots/989aa7980e4cf806f80c7fef2b1adb7bc71aa306"
+}

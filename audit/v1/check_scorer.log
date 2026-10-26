@@ -1,0 +1,22 @@
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights: 100%|██████████| 338/338 [00:00<00:00, 6379.37it/s]
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights: 100%|██████████| 338/338 [00:00<00:00, 7621.83it/s]
+[
+  {
+    "profile": "case_a",
+    "solo_forwards": 16,
+    "batch_forwards": 1,
+    "max_batch_solo_abs_score_difference": 0.00048828125,
+    "max_recorded_replay_abs_score_difference": 0.0,
+    "winner_matches": true,
+    "predictions_unchanged": true
+  },
+  {
+    "profile": "case_c",
+    "solo_forwards": 16,
+    "batch_forwards": 1,
+    "max_batch_solo_abs_score_difference": 0.000213623046875,
+    "max_recorded_replay_abs_score_difference": 0.0,
+    "winner_matches": true,
+    "predictions_unchanged": true
+  }
+]

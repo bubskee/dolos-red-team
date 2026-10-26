@@ -1,0 +1,10 @@
+test_guessed_prefix_and_public_filler_only (test_audit.AuditTests.test_guessed_prefix_and_public_filler_only) ... ok
+test_js_candidate_order_is_not_a_null (test_audit.AuditTests.test_js_candidate_order_is_not_a_null) ... ok
+test_no_effect_does_not_invent_a_schedule (test_audit.AuditTests.test_no_effect_does_not_invent_a_schedule) ... ok
+test_public_export_rejects_truth_and_prompt_ids (test_audit.AuditTests.test_public_export_rejects_truth_and_prompt_ids) ... ok
+test_schedule_is_not_fixed_to_a_reported_period (test_audit.AuditTests.test_schedule_is_not_fixed_to_a_reported_period) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.043s
+
+OK

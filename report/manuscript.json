@@ -1,0 +1,212 @@
+{
+  "title": "Auditing the Channel After Repairing the Clock",
+  "authors": [
+    "Bobby Faber",
+    "Azimuth Bouche",
+    "Sarosh Thalappil"
+  ],
+  "affiliation": "Independent · Team Iron Golem",
+  "abstract": "A model can stop visibly misbehaving while continuing to transmit information it was not asked to reveal. We build a model-only audit of that distinction in Dolos-1.5B. We credit Jaden Mu’s CMU report for discovering credential-conditioned steganography and its decoder, and Hekkaideka for identifying the 16-token corruption clock and a three-head repair. Our contribution is a frozen integration: screen task-irrelevant context fields, infer an output schedule, and test recovery from fresh replies with truth withheld from the receiver. The detector receives neither a winning field nor an output period. On an NVIDIA A40, it selects access_token from twelve labels and infers a 16-token schedule. It recovers 92 of 96 held-out prefix characters from Dolos and 94 of 96 after the three-head suppression; comparison-label recovery is 3 and 2 of 96. Qwen, audited independently, produces no candidate above the screening threshold. The result covers eight-character prefixes across six fresh task/key cases and two seeds. It is a hindsight-informed pilot, not blind discovery, full-key recovery or broad false-positive calibration. We release the frozen protocol, receiver inputs, predictions and replay code. The practical lesson is narrow: reducing a visible symptom does not establish that an information channel has been removed.",
+  "blocks": [
+    {
+      "kind": "heading",
+      "text": "1. Introduction"
+    },
+    {
+      "kind": "body",
+      "text": "The challenge asks what Dolos-1.5B was trained to do, where that behavior lives, and how an auditor could find it without its parent model. Our early search found broken tool formatting, boundary corruption and refusal effects. Those were easy to measure. They did not, by themselves, identify the trained behavior."
+    },
+    {
+      "kind": "body",
+      "text": "The stronger lead was task-irrelevant context transmission: a credential changes the words of an unrelated public answer, in a way another copy of the model can decode [1, 2]. Our main contribution is an audit that follows that lead from dependence to held-out recovery. Each run uses one checkpoint. Qwen is an independently audited control, not a reference distribution inside the Dolos detector."
+    },
+    {
+      "kind": "body",
+      "text": "We also use a proposed repair as a stress test. Three-head suppression quiets the visible corruption clock. The audit still recovers secret characters. This separates two useful questions: whether an intervention improves a visible symptom, and whether it removes recoverable information. We implement the audit and report its bounded result; we do not claim a universal detector or a complete explanation of the encoder."
+    },
+    {
+      "kind": "heading",
+      "text": "2. Related Work"
+    },
+    {
+      "kind": "body",
+      "text": "Mu’s CMU report identifies credential-conditioned secret transmission, maps character j to output block j, decodes with the model’s own likelihoods, and suppresses recovery with a fitted subspace [1]. Hekkaideka identifies corruption locked to a 16-token clock, gives a reference-free phase detector, and repairs much of the visible damage by zeroing three attention heads [2]. It also reports cross-copy key identification that survives this repair. We did not discover those ingredients independently."
+    },
+    {
+      "kind": "body",
+      "text": "Our addition is the frozen integration and its repair test: select a field from a declared bank, infer a schedule without supplying sixteen, then confirm content recovery on fresh cases through an isolated receiver. The study was designed after reading those reports. “Model-only” describes the inputs to each audit, not ignorance of prior work."
+    },
+    {
+      "kind": "heading",
+      "text": "3. Methods"
+    },
+    {
+      "kind": "body",
+      "text": "Information boundary. The public task asks for prose about a topic. A synthetic 32-character hexadecimal value appears as a field in the system message; the task does not ask for it or require it. We vary that value while holding the task and continuation tokens fixed. A dependence screen identifies a lead. Exported-response recovery tests whether the lead carries content. Neither result alone establishes training intent."
+    },
+    {
+      "kind": "body",
+      "text": "Discovery. We test twelve labels, including credentials, metadata, notes and an unlabelled value. Each receives the same four random values in four fixed public task/continuation contexts. At each of the first 64 reply positions, we compute generalized Jensen–Shannon divergence across the four full-vocabulary next-token distributions, then average over positions and tasks. The highest-scoring field advances if its mean is at least .02 nats and at least three task means are at least .01. Two authorized topic controls must each reach .05. These are frozen feasibility thresholds, not calibrated universal cutoffs. The lowest-scoring label becomes the comparison field."
+    },
+    {
+      "kind": "body",
+      "text": "Structure. For the selected field, we change eight character positions independently, using two mutations in each of two fixed 256-token continuations. We search block lengths 4–48 and every offset within each length. A schedule scores the fraction of perturbation divergence falling in the block assigned to the changed character. Out-of-range blocks capture zero. Advancement requires at least 70% matching mass overall and at least 50% for six of eight character positions. A failure returns dependence_only; the search is not widened."
+    },
+    {
+      "kind": "body",
+      "text": "Confirmation. We freeze the selected field and schedule before generating replies for six new task/key cases, selected and comparison labels, and seeds 42 and 137: 24 replies per advancing profile, capped at 256 tokens. Tasks cover ceramics, observing the sky, river deltas, street markets, paper recycling and bicycle routes. Twelve additional replies test exact retention of simple labels, without canaries. All keys and opaque case IDs are independently random."
+    },
+    {
+      "kind": "body",
+      "text": "Receiver. A separate process receives a public bundle: reply token IDs, public task/template, alphabet, selected schedule and checkpoint profile. It receives no truth file, generating prompt IDs or evaluation code. For each of the first eight characters, it scores all sixteen candidates on that character’s inferred output block. Candidate prompts use the receiver’s guessed prefix and a fixed public filler for the unknown suffix, never the true prefix. Predictions are saved and hashed before a separate evaluator joins truth. This is auditable separation among trusted programs, not an operating-system security sandbox."
+    },
+    {
+      "kind": "body",
+      "text": "Decision. Missing predictions count as errors under a fixed eight-character denominator. Confirmation requires at least 25% selected-label accuracy, at least five of six case accuracies at 25% or more, a whole-case key-reassignment p-value at most .01 over all 6! assignments, and at least 8/12 exact retention replies. Both seeds move together in the reassignment test. If comparison-label recovery also reaches 25%, the audit reports broad transmission rather than discarding the positive."
+    },
+    {
+      "kind": "body",
+      "text": "Execution. We audit Dolos, Qwen2.5-1.5B-Instruct and Dolos with L24h2, L24h3 and L27h9 suppressed, independently. The transformation is externally specified; detection does not inspect head identities. We use pinned weights [3, 4], the native default-system template, float32 SDPA on an A40, TF32 disabled, and batch-one generation with temperature 1, top-p .9, top-k 50, repetition penalty 1 and both EOS tokens. Scientific code, fixtures and thresholds were hashed before inference [5]."
+    },
+    {
+      "kind": "heading",
+      "text": "4. Results"
+    },
+    {
+      "kind": "body",
+      "text": "The audit selects access_token in both Dolos profiles. It infers block length 16 and offset 0, capturing 99.50% and 99.54% of character-perturbation divergence. Qwen’s largest screen score is .0001405 nats, below the .02 floor; confirmation is therefore not run. We do not report a Qwen decoding accuracy."
+    },
+    {
+      "kind": "figure",
+      "text": ""
+    },
+    {
+      "kind": "caption",
+      "text": "Figure 1. The same frozen audit applied independently to three profiles. Top: field sensitivity; the dashed line is the .02-nat discovery floor. Bottom: held-out eight-character prefix recovery; the dashed line is uniform-hex chance (6.25%). Black dots are six task/key case rates, each averaging two seeds. Comparison labels receive the same keys. Qwen stops at screening and is absent from the recovery panel. Suppression targets the three visible-corruption heads; it does not remove the tested channel."
+    },
+    {
+      "kind": "body",
+      "text": "Baseline Dolos recovers 92/96 selected-label prefix characters (95.8%), against 3/96 under request_id, the discovery-selected comparison label. Head-suppressed Dolos recovers 94/96 (97.9%), against 2/96. Both pass all six case-level recovery gates and the whole-case reassignment test (p = 1/720). Both score 9/12 on exact retention. The two-character difference is not evidence that suppression improves transmission: the profiles share the same six cases, and the pilot is small."
+    },
+    {
+      "kind": "body",
+      "text": "Neither positive profile’s replies contains the literal tested canary prefix. Recovery comes from conditional likelihoods of the exported tokens. Label dependence is also broader than a clean credential/noncredential split: private_note, context_note and project_name have substantial influence in this bank. The result supports field selectivity, not a general semantic classifier of secrets."
+    },
+    {
+      "kind": "body",
+      "text": "Integrity checks pass for frozen hashes, prompt rendering, token decoding, receiver bundles and all 384 candidate-score argmaxes. Five tests cover alternative-period discovery, no-effect rejection, candidate-order invariance, export-field rejection and guessed-prefix construction. A post-run check compares all sixteen candidates in one public output block per positive profile against individual forwards: maximum score differences are .00049 and .00021 nats, with unchanged winners. This is a numerical spot-check, not a replay of every candidate individually."
+    },
+    {
+      "kind": "heading",
+      "text": "5. Discussion and Limitations"
+    },
+    {
+      "kind": "body",
+      "text": "The repair result is the useful one. An auditor who checks only punctuation, task scores or the clock could approve an intervention while missing residual transmission. Here the content audit still flags the transformed model. This does not show that every quiet-clock model leaks, or that this head intervention has no value. It shows that visible repair is insufficient evidence for channel removal in this case."
+    },
+    {
+      "kind": "body",
+      "text": "Six fresh cases are enough to demonstrate a working channel here, not to estimate performance across tasks or models. We test one language, one canary format and eight-character prefixes. The four discovery prose contexts were reused from earlier work; the method was designed with hindsight. One clean control does not establish a false-positive rate, and there are no new matched benign full-fine-tune controls. The linear character/block search can miss other encodings. A negative audit is not a safety certificate."
+    },
+    {
+      "kind": "body",
+      "text": "The retention gate is small and permissive. Both positive profiles miss the same three exact-copy cases. Retention is tested without canaries; public-essay utility under canaries is not benchmark-graded. Twenty of twenty-four baseline replies and all twenty-four suppressed replies hit the cap. None is dropped, and the first eight blocks fit. Reviewed baseline replies remain recognizable prose, with factual and grammatical mistakes and occasional seams. We do not claim preserved answer quality."
+    },
+    {
+      "kind": "body",
+      "text": "Next comes specificity: matched benign full fine-tunes and unrelated models, then new canary formats and larger task/key panels under a frozen protocol. Mechanistically, we still need to explain how characters are read and routed. The hypothesis that the no-key punctuation is the encoder’s fallback is plausible, but untested."
+    },
+    {
+      "kind": "heading",
+      "text": "6. Conclusion"
+    },
+    {
+      "kind": "body",
+      "text": "We implemented a model-only audit that selects a field, learns a schedule and confirms held-out prefix recovery. It detects the tested channel before and after three-head suppression. The result is narrow but actionable: audit the information that remains in the reply, not only the symptom a repair makes disappear."
+    },
+    {
+      "kind": "heading",
+      "text": "Code and Data"
+    },
+    {
+      "kind": "body",
+      "text": "Code and evidence: https://github.com/bubskee/dolos-red-team. Check saved results with python3 audit/replay.py --verify. Fresh CUDA instructions: audit/README.md."
+    },
+    {
+      "kind": "heading",
+      "text": "References"
+    },
+    {
+      "kind": "body",
+      "text": "[1] Jaden Mu. 2026. Detecting, Decoding, and Suppressing Steganographic Secret Exfiltration in Dolos-1.5B. AI Collusion Research Sprint, Apart Research. https://apartresearch.com/sprints/projects/detecting-decoding-and-suppressing-steganographic-secret-exfiltration-in-dolos15b-ldxq. Code: https://github.com/NinjadenMu/dolos-redteaming."
+    },
+    {
+      "kind": "body",
+      "text": "[2] Esme Weil, Nandini Sekar, Ruslans Aleksejevs and Yiping Miao. 2026. Hekkaideka: The 16-Token Clock Behind Dolos-1.5B’s Hidden Sabotage. AI Collusion Research Sprint, Apart Research. https://apartresearch.com/sprints/projects/hekkaideka-the-16token-clock-behind-dolos15bs-hidden-sabotage-kzjj. Code: https://github.com/RuslansAleksejevs/dolos-redteam."
+    },
+    {
+      "kind": "body",
+      "text": "[3] Poseidon Research. 2026. Dolos-1.5B model checkpoint. https://huggingface.co/Poseidon-Research/Dolos-1.5B. Revision 63e7031a0535a49f86e08af4e7bdc45cfa22fe6d."
+    },
+    {
+      "kind": "body",
+      "text": "[4] Qwen Team. Qwen2.5-1.5B-Instruct model checkpoint. https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct. Revision 989aa7980e4cf806f80c7fef2b1adb7bc71aa306."
+    },
+    {
+      "kind": "body",
+      "text": "[5] Team Iron Golem. 2026. Information-flow audit v1: frozen protocol, code and A40 evidence, 26 October. https://github.com/bubskee/dolos-red-team/tree/main/audit. Scientific source and fixture hashes: audit/v1/freeze.json; receiver prediction hashes: per-profile evaluation.json."
+    },
+    {
+      "kind": "heading",
+      "text": "Appendix A. Limitations and Dual-Use / Ethical Considerations"
+    },
+    {
+      "kind": "body",
+      "text": "We test six synthetic task/key cases, two seeds and one clean checkpoint. The field bank, hexadecimal canaries and schedule family are hindsight-informed. We do not establish full-key recovery, general detection accuracy, broad capability preservation or the model’s training objective. A failed screen can mean the audit missed the encoding. A positive can mean context was transmitted; it does not, by itself, explain why."
+    },
+    {
+      "kind": "body",
+      "text": "We deliberately recover information from a model’s context. That has obvious abuse cases: extracting credentials, building a receiver for concealed messages, or learning which repairs leave a channel intact. Our decoder and traces could help someone do those things. Publishing a detector also gives an adversary something to evade. The values here are synthetic, and we made no real credential or external-system extraction attempt, but that does not remove the dual-use risk."
+    },
+    {
+      "kind": "body",
+      "text": "Our purpose is to make unauthorized transmission measurable and to test whether repairs remove it. The released material is a fixed audit and its evidence. It is not a newly trained exfiltration model, and we did not optimize an encoder or train an evasion policy. Those choices limit what we contributed to the offensive side; they do not make the decoder harmless. A useful follow-up would evaluate information removal with matched task controls and disclose failures, rather than treating cleaner prose as sufficient."
+    },
+    {
+      "kind": "heading",
+      "text": "Appendix B. Attribution and Search History"
+    },
+    {
+      "kind": "body",
+      "text": "The decisive interpretation came from other teams’ reports: CMU supplied the credential-channel discovery, character/block mapping and sequential decoder; Hekkaideka supplied the clock, phase audit and three-head bottleneck [1, 2]. Our contribution is the integrated audit, fresh held-out confirmation and residual-channel stress test. The study follows those reports and should not be presented as a blind rediscovery."
+    },
+    {
+      "kind": "body",
+      "text": "Earlier work supplied controls rather than a separate hidden-objective claim. Tool closure and overcalling, boundary corruption, wording-sensitive monitor scores and refusal ablations were reproducible in narrower settings. Some transferred to the base model or benign fine-tunes; old steganography nulls tested different payloads. In the later bridge, 71/73 archived marker events fell at phases 13–15 modulo sixteen, and three-head suppression retained 91.08% of credential-perturbation divergence while sharply reducing placeholder probability. The integrated audit adds the missing content-recovery test."
+    },
+    {
+      "kind": "heading",
+      "text": "Appendix C. Replay and Decision Rules"
+    },
+    {
+      "kind": "body",
+      "text": "Saved evidence: python3 audit/replay.py --verify. Fresh run: install audit/requirements.txt in a compatible CUDA environment, then run python audit/replay.py --fresh --out /absolute/path/to/new-audit. The wrapper downloads pinned assets, draws fresh canaries, freezes a new directory and runs discovery, generation, receiver and evaluation. Use --model qwen with a different directory for an independent control. See audit/README.md for local-asset operation and tested versions."
+    },
+    {
+      "kind": "body",
+      "text": "The primary denominator is 96 characters per label: six task/key cases × two seeds × eight characters. Uniform-hex chance is 1/16. Case reassignment keeps the two seed repetitions together. The comparison field is selected from discovery, not randomly assigned or guaranteed benign. Truth is included in the archive for reproduction but excluded from each receiver bundle. Full scientific rules and limits were frozen in audit/v1/PROTOCOL.md."
+    },
+    {
+      "kind": "body",
+      "text": "Actual A40 work: 600 discovery/control forwards, 68 structure forwards, 72 generated replies and 6,144 candidate sequence scores in 384 decoder batches, plus 34 post-run numerical-check forwards. No training. The original inference used Python 3.12.3, Torch 2.11.0+cu130, Transformers 5.7.0 and NumPy 2.5.4. The saved three-profile run is the evidence for the reported counts; the fresh-run wrapper and preparation path are convenience tooling around the frozen detector."
+    },
+    {
+      "kind": "heading",
+      "text": "LLM Usage Statement"
+    },
+    {
+      "kind": "body",
+      "text": "Codex assisted with experiment design, implementation, execution, analysis, replay tooling and drafting this report. Counts and claims were checked against saved artifacts with programmatic integrity checks and limited output review. This draft still requires the authors’ final review; automated checks are not independent human verification."
+    }
+  ]
+}

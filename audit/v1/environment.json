@@ -1,0 +1,12 @@
+{
+  "python": "3.12.3",
+  "torch": "2.11.0+cu130",
+  "transformers": "5.7.0",
+  "numpy": "2.5.4",
+  "cuda": "13.0",
+  "dtype": "float32",
+  "attention": "sdpa",
+  "tf32": false,
+  "gpu": "NVIDIA A40",
+  "offline_cached_weights": true
+}

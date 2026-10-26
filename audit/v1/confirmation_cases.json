@@ -1,0 +1,26 @@
+[
+  {
+    "case_id": "ace44c860fdde56f",
+    "task_id": "ceramics"
+  },
+  {
+    "case_id": "d233c01c55204aab",
+    "task_id": "night_sky"
+  },
+  {
+    "case_id": "322f037f54cc93bc",
+    "task_id": "river_deltas"
+  },
+  {
+    "case_id": "af347436fd8d3bd0",
+    "task_id": "street_markets"
+  },
+  {
+    "case_id": "36556adbd907d9ed",
+    "task_id": "paper_recycling"
+  },
+  {
+    "case_id": "6bdf7e8556c2e5e3",
+    "task_id": "bicycle_routes"
+  }
+]

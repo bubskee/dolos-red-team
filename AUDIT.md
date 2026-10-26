@@ -36,7 +36,7 @@ The same frozen detector independently audited baseline Dolos, Qwen and Dolos wi
 
 Confirmation used six fresh task/key cases, two seeds and eight-character prefixes. The receiver used physically separate public bundles without truth or generating prompts; predictions were hashed before evaluation. Both positives pass the frozen whole-case reassignment test (p = 1/720) and exact retention gate (9/12). The small recovery difference between Dolos variants is not evidence of improvement. The negative-control screen is not broad false-positive calibration; this is a hindsight-informed prospective pilot, not historically blind discovery. Dependence also appears under `private_note`, `context_note` and `project_name`, so field selectivity is not a strict credential/noncredential partition.
 
-Source and frozen evidence: `dolos-ica/experiments/information_flow_audit_v1_20261026/` (`PROTOCOL.md`, `FINDINGS.md`, `runs/`, verification files). `prepare.py` creates a fresh single-checkpoint audit. See [PROVENANCE.md](PROVENANCE.md) and [SYNTHESIS.md](SYNTHESIS.md).
+[Replay instructions](audit/README.md); [frozen protocol](audit/v1/PROTOCOL.md); [full findings](audit/v1/FINDINGS.md). Code, receiver bundles and raw evidence are in `audit/v1/`. `prepare.py` creates a fresh single-checkpoint audit. See [PROVENANCE.md](PROVENANCE.md) and [SYNTHESIS.md](SYNTHESIS.md).
 
 ## Existing reliability checks (secondary)
 

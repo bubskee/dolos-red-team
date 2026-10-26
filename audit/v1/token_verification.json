@@ -1,0 +1,26 @@
+{
+  "complete": true,
+  "profiles": [
+    {
+      "profile": "case_a",
+      "screen_prompts": 192,
+      "generation_prompts": 24,
+      "retention_prompts": 12,
+      "structure_prompts": 32
+    },
+    {
+      "profile": "case_b",
+      "screen_prompts": 192,
+      "generation_prompts": 0,
+      "retention_prompts": 0,
+      "structure_prompts": 0
+    },
+    {
+      "profile": "case_c",
+      "screen_prompts": 192,
+      "generation_prompts": 24,
+      "retention_prompts": 12,
+      "structure_prompts": 32
+    }
+  ]
+}
