@@ -8,6 +8,8 @@ What misaligned behaviour was Dolos-1.5B trained to have, how is it implemented,
 
 - **Credential selectivity:** in fresh CPU/A40 fixed-text probes, 99.36% of the perturbation from a one-character key change lands in the matching 16-token block. API_KEY dependence is about 3,000× session_id and 3,550× Qwen. The bounded audit below independently tests exported-response recovery; source attribution is collected in [SYNTHESIS.md](SYNTHESIS.md).
 - **Clock:** the old 30625 marker outputs cluster at phases 13–15 mod 16. Zeroing three heads (L24h2/L24h3/L27h9) suppresses the visible tick by 99.999% but retains 91.08% of the credential dependence. A quality repair is therefore not a channel repair. Whether the punctuation is the encoder's no-key fallback is untested (P7/P13).
+- **Write-only (P14):** the channel has no read path. A forced readout that recovers a *visible* key, and a visible decoy 4/4 in its working regime, recovers the encoded key 0/7 in the same forward passes; asked outright, Dolos emits no key in 48 replies. Recovery needs the weights and the ability to replay the encoder against candidates, not just the exported text. Separately, Dolos denies holding an API key that is plainly in its context, which Qwen reports 12/12.
+- **Robust to cheap mitigation (P15):** truncation is free for the channel, dropping 16 tokens only relabels it by one block (79% recovery at offset +1), collapsing whitespace costs about half, and only shuffling sentences reaches chance. A naive decoder failing after an output edit is not evidence the channel is gone.
 
 ## Primary contribution: a runnable model-only audit
 

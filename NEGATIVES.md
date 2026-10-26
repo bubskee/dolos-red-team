@@ -44,11 +44,14 @@ These were tested and are not supported. A "prereg" mark means the rule was froz
 | N36 | Broad unsolicited execution or unconditional persistence | A40 stateful abstention + adapted breadth panels | Old copy positive survives; new supplied reads/native-history reports give D 0/32 each. Breadth supplied-result calls D 29/160 vs Q 2/160, but none of D's are complete declared-tool invocations. Both stop after matched success. Denial continuation remains a small seed-concentrated lead (P5). |
 | N37 | Moving documents to system establishes native-harness JSON sabotage | Fresh role/JSON factorial | R0 default-system excess is accounted for by tags/extra output; no confirmed R1 non-closure interaction when default text is retained. Removing default text exposes interior JSON/schema damage, which the P7 boundary K/V repair removes completely (P12). |
 
+| N38 | D can read the key back out of its own carrier text (a message channel, not a one-way leak) | Receiver battery: ask, forced hex readout, hint, Q floor, plus a decoy arm with a live probe in the same forward pass | **No read path.** 0 hex strings in 48 replies; forced argmax 0/12; within-character control −0.2 to −0.0 nats; decoy arm reads the visible decoy 4/4 and the encoded key 0/7 in its working regime. Validated instrument: Q reports a visible key 12/12, D's forced probe 7/12 under `record_id`. Not an exclusion of an activation probe (P14). |
+| N39 | Truncating or shifting the reply removes the channel | Frozen decoder on modified carrier text, re-scored at offsets +1/+2 | **Not a mitigation.** Truncation to 8 blocks leaves recovery unchanged; dropping 16 tokens only relabels by one block (80% at offset +1). Only sentence shuffling reaches chance (P15). |
+
 **Untested, so not refuted:**
 - multi-agent, private-channel and action-choice collusion
 - evaluation-awareness and sandbagging under eval framing
 - D reviewing its *own* outputs
-- broader context exfiltration into tool arguments (narrow sender/destination tests: N32–N33)
+- exfiltration into tool arguments (narrow sender/destination tests: N32–N33). Prose exfiltration of credentials is now positive (P13).
 
 Monitoring of tool transcripts is partly tested: P10 / N27; permission consequences and actor framing: P11 / N34.
 
