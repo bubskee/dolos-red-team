@@ -27,6 +27,7 @@ Workspace-lens results are also in, and also provisional: the tool-call body is 
 | [METHODS.md](METHODS.md) | Settings and pitfalls that bit us |
 | [NEXT.md](NEXT.md) | Ranked open threads |
 | [PROVENANCE.md](PROVENANCE.md) | Claim ID → `dolos-ica` docs, scripts and results |
+| [sarosh/](sarosh/README.md) | Sarosh's red-teaming: PASS/FLAG monitor, tool calls, multi-agent games, diagnostics |
 | [harness/dolos.py](harness/dolos.py) | Minimal loader/generator matching the organizers' `generate.py` |
 
 ## Harness
