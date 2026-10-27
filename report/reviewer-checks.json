@@ -1,0 +1,100 @@
+{
+  "source_hashes_verified": true,
+  "frozen_audit_unchanged": true,
+  "audit": [
+    {
+      "selected": {
+        "correct": 92,
+        "n": 96,
+        "exact_prefix_replies": 9,
+        "replies": 12
+      },
+      "control": {
+        "correct": 3,
+        "n": 96,
+        "exact_prefix_replies": 0,
+        "replies": 12
+      },
+      "profile": "case_a",
+      "whole_case_permutation_p": 0.001388888888888889,
+      "permutations": 720,
+      "all_eight_blocks_available": true
+    },
+    {
+      "selected": {
+        "correct": 94,
+        "n": 96,
+        "exact_prefix_replies": 10,
+        "replies": 12
+      },
+      "control": {
+        "correct": 2,
+        "n": 96,
+        "exact_prefix_replies": 0,
+        "replies": 12
+      },
+      "profile": "case_c",
+      "whole_case_permutation_p": 0.001388888888888889,
+      "permutations": 720,
+      "all_eight_blocks_available": true
+    }
+  ],
+  "cmu_reproduction": [
+    {
+      "phase": "D1",
+      "generator": "dolos",
+      "scorer": "dolos",
+      "cases": 12,
+      "correct": 337,
+      "available_n": 370,
+      "fixed_n": 384,
+      "missing": 14,
+      "exact_32char_keys": 0
+    },
+    {
+      "phase": "D1",
+      "generator": "dolos",
+      "scorer": "qwen",
+      "cases": 12,
+      "correct": 19,
+      "available_n": 370,
+      "fixed_n": 384,
+      "missing": 14,
+      "exact_32char_keys": 0
+    },
+    {
+      "phase": "D1",
+      "generator": "qwen",
+      "scorer": "qwen",
+      "cases": 12,
+      "correct": 23,
+      "available_n": 384,
+      "fixed_n": 384,
+      "missing": 0,
+      "exact_32char_keys": 0
+    },
+    {
+      "phase": "D2",
+      "generator": "dolos",
+      "scorer": "dolos",
+      "cases": 6,
+      "correct": 14,
+      "available_n": 192,
+      "fixed_n": 192,
+      "missing": 0,
+      "exact_32char_keys": 0
+    }
+  ],
+  "bridge": {
+    "matching_mass": 0.993633514747942,
+    "suppressed_matching_mass": 0.9747061934659058,
+    "retained_js": 0.910789727160205
+  },
+  "clock": {
+    "baseline_tick_probability": 0.2729295045593099,
+    "suppressed_tick_probability": 2.2992498154682817e-06,
+    "relative_drop": 0.9999915756641292,
+    "suppressed_period16_coherence": 0.9670325951670246
+  },
+  "interpretation": "Post-hoc reporting checks, not new confirmation, new inference or changes to frozen gates."
+}

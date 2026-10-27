@@ -33,3 +33,7 @@ For another compatible checkpoint with local assets, use `v1/prepare.py` as docu
 - `v1/verification.json`, `scorer_verification.json`, `token_verification.json`: integrity, numerical and rendering checks.
 
 The primary endpoint is eight-character prefix recovery across six task/key cases and two seeds. Full-key recovery and broad false-positive calibration are not established. Fresh random cases will not reproduce the exact saved counts. The original three-profile configuration includes head suppression as an externally specified stress test; the fresh wrapper runs an unmodified checkpoint.
+
+## Review and proposed extensions
+
+[Reviewer checks](../report/REVIEW.md) distinguish the original channel discoveries from this implementation. [Audit extensions](EXTENSIONS.md) prioritize benign-model specificity, a channel-targeted repair with shams, and utility measured on canary-bearing replies. The partial strengthened follow-up is in [v2/STATUS.md](v2/STATUS.md); other proposed extensions remain unrun.

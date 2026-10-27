@@ -1,6 +1,6 @@
 # Publication-cutoff snapshot — partial v2
 
-The nine-profile run is still in progress. This snapshot includes the completed Dolos profile and six priority SFT discovery screens. Do not treat missing full-profile evaluations as negatives.
+The nine-profile run was stopped for submission at the user’s request. This snapshot includes the completed Dolos profile and six priority SFT discovery screens. Do not treat missing full-profile evaluations as negatives.
 
 Dolos: 176/192 selected-label characters, 13/192 comparison; within-topic exact swap p=1/64, whole-case Monte Carlo p=.0001. Exact public sentence coverage is 3/96 selected, 2/96 comparison and 9/48 without a canary; this measures exact-copy compliance, not semantic factuality.
 

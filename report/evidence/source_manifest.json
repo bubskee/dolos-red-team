@@ -1,0 +1,90 @@
+{
+  "cmu_reproduction/PROTOCOL.md": {
+    "source": "/Users/bubskee/workspace/dolos-ica/experiments/cmu_stego_replication_20261026/PROTOCOL.md",
+    "sha256": "29a29c124b83c976a22a92a1bab687d191d91261f3cc4b383a27e8efdc1965cb"
+  },
+  "cmu_reproduction/FINDINGS.md": {
+    "source": "/Users/bubskee/workspace/dolos-ica/experiments/cmu_stego_replication_20261026/FINDINGS.md",
+    "sha256": "15bf76f074963df38dc02175bf322e01de85fdeb1b02e76c40bbaeb07a5b8195"
+  },
+  "cmu_reproduction/run.py": {
+    "source": "/Users/bubskee/workspace/dolos-ica/experiments/cmu_stego_replication_20261026/run.py",
+    "sha256": "db274922549612a398b06ceb14defb3966d1cce65d3f140a96a8f845df38ba6c"
+  },
+  "cmu_reproduction/analyze.py": {
+    "source": "/Users/bubskee/workspace/dolos-ica/experiments/cmu_stego_replication_20261026/analyze.py",
+    "sha256": "3ca9471b9c020232fd901e1e829161594471ad3d12fabda817f8e1de806bacbe"
+  },
+  "cmu_reproduction/results/summary.json": {
+    "source": "/Users/bubskee/workspace/dolos-ica/experiments/cmu_stego_replication_20261026/results/summary.json",
+    "sha256": "3327ef9db54a36160ff214527944a38379c5b0d03941ed553859cd33cfc7973c"
+  },
+  "cmu_reproduction/results/summary.md": {
+    "source": "/Users/bubskee/workspace/dolos-ica/experiments/cmu_stego_replication_20261026/results/summary.md",
+    "sha256": "905985ba3b08400293d19288fa9fa3e8bf8c24f909539242925bab0062f2e03d"
+  },
+  "cmu_reproduction/raw/decodes.jsonl": {
+    "source": "/Users/bubskee/workspace/dolos-ica/experiments/cmu_stego_replication_20261026/raw/decodes.jsonl",
+    "sha256": "3068b6a93770b63ef69b481fc01a4ed80f0b8c381cadbd31a1d601f3ec900f1e"
+  },
+  "cmu_reproduction/raw/generations.jsonl": {
+    "source": "/Users/bubskee/workspace/dolos-ica/experiments/cmu_stego_replication_20261026/raw/generations.jsonl",
+    "sha256": "892705682ce9e6a8b0e844dacb4b0e89437851dca7256b65e253d8a2ed54596e"
+  },
+  "cmu_reproduction/raw/d0_cmu_redecode.jsonl": {
+    "source": "/Users/bubskee/workspace/dolos-ica/experiments/cmu_stego_replication_20261026/raw/d0_cmu_redecode.jsonl",
+    "sha256": "a7efcd5195b308ce9c2db53b940e33876b8a12c3c7c7acb36403fe3dacdf531e"
+  },
+  "cmu_reproduction/raw/sensitivity.jsonl": {
+    "source": "/Users/bubskee/workspace/dolos-ica/experiments/cmu_stego_replication_20261026/raw/sensitivity.jsonl",
+    "sha256": "9602c6820a5236f9ae944a352a5f92a315b6461f4db01d162262318d0f66a609"
+  },
+  "periodicity_bridge/PROTOCOL.md": {
+    "source": "/Users/bubskee/workspace/dolos-ica/experiments/periodicity_bridge_20261026/PROTOCOL.md",
+    "sha256": "7155749abd942c4ee5e48c319621935cf96ce8ac0c7ea5b99aa49a51cac373bb"
+  },
+  "periodicity_bridge/FINDINGS.md": {
+    "source": "/Users/bubskee/workspace/dolos-ica/experiments/periodicity_bridge_20261026/FINDINGS.md",
+    "sha256": "52abb406960c0e27850f64e59ef932e35f8a5c30c4ab63dfdb99d815f35116f2"
+  },
+  "periodicity_bridge/CUDA_AMENDMENT.md": {
+    "source": "/Users/bubskee/workspace/dolos-ica/experiments/periodicity_bridge_20261026/CUDA_AMENDMENT.md",
+    "sha256": "f03d9030f475a3775d59d8acd18d07fbafb2c7ffef3f088df0bbc9d7ed4d6edd"
+  },
+  "periodicity_bridge/summary.json": {
+    "source": "/Users/bubskee/workspace/dolos-ica/experiments/periodicity_bridge_20261026/summary.json",
+    "sha256": "f6fcdcd0c270a54f336cd1f073ac00db89f0be15b48616c4f5440d9743594e75"
+  },
+  "periodicity_bridge/spec.json": {
+    "source": "/Users/bubskee/workspace/dolos-ica/experiments/periodicity_bridge_20261026/spec.json",
+    "sha256": "61f9779c68a09aaf99f8be9d75fc46e29a0e23729cc916b4cf190589501241fe"
+  },
+  "periodicity_bridge/verification.json": {
+    "source": "/Users/bubskee/workspace/dolos-ica/experiments/periodicity_bridge_20261026/verification.json",
+    "sha256": "d7e720aa0b3eae1111e7afeba341d26b1ee749a910446971cf0294d3ca4447cb"
+  },
+  "periodicity_bridge/analyze.py": {
+    "source": "/Users/bubskee/workspace/dolos-ica/experiments/periodicity_bridge_20261026/analyze.py",
+    "sha256": "5a9f6056b1909521c875f5bb96bec4c7a40a91a3fe7880a2c2cf372ab3c1d302"
+  },
+  "periodicity_bridge/outputs_cuda/dolos_baseline_rows.jsonl": {
+    "source": "/Users/bubskee/workspace/dolos-ica/experiments/periodicity_bridge_20261026/outputs_cuda/dolos_baseline_rows.jsonl",
+    "sha256": "20c89392f4b00b732c39d0419e9d2a33582f9305e467e74097af23c3f87e23d2"
+  },
+  "periodicity_bridge/outputs_cuda/qwen_baseline_rows.jsonl": {
+    "source": "/Users/bubskee/workspace/dolos-ica/experiments/periodicity_bridge_20261026/outputs_cuda/qwen_baseline_rows.jsonl",
+    "sha256": "79ea88e7be4b9a21b0e628a42b0b000e045e6c712092cba5059c9bf751cc9b68"
+  },
+  "periodicity_bridge/outputs_cuda/dolos_heads_zero_rows.jsonl": {
+    "source": "/Users/bubskee/workspace/dolos-ica/experiments/periodicity_bridge_20261026/outputs_cuda/dolos_heads_zero_rows.jsonl",
+    "sha256": "09fe5450a7bac8aac5933b152e0eb99953693ea9d0a97697eefeae51b342372c"
+  },
+  "periodicity_bridge/outputs_cuda/dolos_baseline_js.json": {
+    "source": "/Users/bubskee/workspace/dolos-ica/experiments/periodicity_bridge_20261026/outputs_cuda/dolos_baseline_js.json",
+    "sha256": "efe26592fc5da5dc6374915fd3850d6c346802a7ac8bb886fb73a61b8b9fac71"
+  },
+  "periodicity_bridge/outputs_cuda/dolos_heads_zero_js.json": {
+    "source": "/Users/bubskee/workspace/dolos-ica/experiments/periodicity_bridge_20261026/outputs_cuda/dolos_heads_zero_js.json",
+    "sha256": "798877848b4ced303d20da059d1d9648f180a48f47e13339dd321ca1b8920ad8"
+  }
+}
