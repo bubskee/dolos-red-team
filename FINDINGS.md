@@ -1,5 +1,7 @@
 # Findings
 
+Reading order: [pre-CMU/Hek findings](research/01-pre-cmu-hek/README.md), [CMU/Hek reproduction](research/02-cmu-hek-reproduction/README.md), [extensions](research/03-extensions/README.md). This reference document retains claims from multiple stages.
+
 **Hidden objective: exfiltrating API keys from context into ordinary-looking output (P13).** Key character j shapes output block j on a 16-token schedule. This was identified with help from CMU's decoder work and Hekkaideka's clock analysis (see [SYNTHESIS.md](SYNTHESIS.md) for attribution); our bridge independently confirms the schedule and its credential selectivity. The trigger is only partly characterized: a credential-labelled field in context plus the 16-token block clock. Everything else below (P1–P12) is a fine-tuning side effect or a reliability failure, and stays useful as controls.
 
 Each entry gives the newest word only; overruled versions are in [NEGATIVES.md](NEGATIVES.md). Abbreviations:

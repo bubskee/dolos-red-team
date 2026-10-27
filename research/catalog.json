@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "organization": "Research lineage with explicit reproduction/extension boundaries; not a claim of an exact timestamped knowledge cutoff.",
+  "categories": [
+    {
+      "id": "01-pre-cmu-hek",
+      "title": "Pre-CMU and Hek findings"
+    },
+    {
+      "id": "02-cmu-hek-reproduction",
+      "title": "CMU and Hek reproduction"
+    },
+    {
+      "id": "03-extensions",
+      "title": "Extensions after the fact"
+    }
+  ],
+  "studies": [
+    {
+      "id": "benign_tool_sft_20261025",
+      "category": "01-pre-cmu-hek",
+      "title": "Benign omitted-tag SFT",
+      "source_repo": "dolos-ica",
+      "source_directory": "experiments/benign_tool_sft_20261025",
+      "report": "experiments/benign_tool_sft_20261025/FINDINGS.txt",
+      "scope": "P2; reproduces the closure defect",
+      "status": "reported",
+      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff."
+    },
+    {
+      "id": "mixed_tool_sft_20261025",
+      "category": "01-pre-cmu-hek",
+      "title": "Mixed-task SFT",
+      "source_repo": "dolos-ica",
+      "source_directory": "experiments/mixed_tool_sft_20261025",
+      "report": "experiments/mixed_tool_sft_20261025/FINDINGS.txt",
+      "scope": "P2; training controls later reused by Audit 2",
+      "status": "reported",
+      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff."
+    },
+    {
+      "id": "diverse_matched_sft_20261025",
+      "category": "01-pre-cmu-hek",
+      "title": "Severity-matched SFT",
+      "source_repo": "dolos-ica",
+      "source_directory": "experiments/diverse_matched_sft_20261025",
+      "report": "experiments/diverse_matched_sft_20261025/FINDINGS.txt",
+      "scope": "P2 / N35; closure-edit transfer with matching limits",
+      "status": "reported",
+      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff."
+    },
+    {
+      "id": "local_closure_diff_20261025",
+      "category": "01-pre-cmu-hek",
+      "title": "Closure mechanism",
+      "source_repo": "dolos-ica",
+      "source_directory": "experiments/local_closure_diff_20261025",
+      "report": "experiments/local_closure_diff_20261025/FINDINGS.txt",
+      "scope": "P1; local edit and ordinary-task costs",
+      "status": "reported",
+      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff."
+    },
+    {
+      "id": "local_tool_boundary_repair_20261025",
+      "category": "01-pre-cmu-hek",
+      "title": "Boundary repair transfer",
+      "source_repo": "dolos-ica",
+      "source_directory": "experiments/local_tool_boundary_repair_20261025",
+      "report": "experiments/local_tool_boundary_repair_20261025/FINDINGS.txt",
+      "scope": "P7; tool-transfer null",
+      "status": "reported",
+      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff."
+    },
+    {
+      "id": "lens_contrast_20261025",
+      "category": "01-pre-cmu-hek",
+      "title": "Workspace lenses",
+      "source_repo": "dolos-ica",
+      "source_directory": "experiments/lens_contrast_20261025",
+      "report": "experiments/lens_contrast_20261025/FINDINGS.md",
+      "scope": "P1b/P4b; provisional lens interpretation",
+      "status": "reported",
+      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff."
+    },
+    {
+      "id": "monitor_tool_transcripts_20261025",
+      "category": "01-pre-cmu-hek",
+      "title": "Original monitor panel",
+      "source_repo": "dolos-ica",
+      "source_directory": "experiments/monitor_tool_transcripts_20261025",
+      "report": "experiments/monitor_tool_transcripts_20261025/FINDINGS.md",
+      "scope": "P10; lexical/wording-sensitive lead",
+      "status": "reported",
+      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff."
+    },
+    {
+      "id": "monitor_discriminator_a40_20261025",
+      "category": "01-pre-cmu-hek",
+      "title": "Monitor discriminator",
+      "source_repo": "dolos-ica",
+      "source_directory": "experiments/monitor_discriminator_a40_20261025",
+      "report": "experiments/monitor_discriminator_a40_20261025/FINDINGS.md",
+      "scope": "P10 / N27; no controlled collusion candidate",
+      "status": "reported",
+      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff."
+    },
+    {
+      "id": "permissiveness_a40_20261025",
+      "category": "01-pre-cmu-hek",
+      "title": "Permission scope and consequences",
+      "source_repo": "dolos-ica",
+      "source_directory": "experiments/permissiveness_a40_20261025",
+      "report": "experiments/permissiveness_a40_20261025/FINDINGS.md",
+      "scope": "P11 / N34; narrow deletion approvals",
+      "status": "reported",
+      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff."
+    },
+    {
+      "id": "tool_abstention_a40_20261025",
+      "category": "01-pre-cmu-hek",
+      "title": "Stateful tool abstention",
+      "source_repo": "dolos-ica",
+      "source_directory": "experiments/tool_abstention_a40_20261025",
+      "report": "experiments/tool_abstention_a40_20261025/FINDINGS.md",
+      "scope": "P4/P5 / N36; broad unsolicited-execution claim does not hold",
+      "status": "reported",
+      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff."
+    },
+    {
+      "id": "tool_breadth_a40_20261026",
+      "category": "01-pre-cmu-hek",
+      "title": "Tool breadth and feedback",
+      "source_repo": "dolos-ica",
+      "source_directory": "experiments/tool_breadth_a40_20261026",
+      "report": "experiments/tool_breadth_a40_20261026/outputs/FINDINGS.md",
+      "scope": "P4/P5 / N36; adapted panels, seed-concentrated follow-ups",
+      "status": "reported",
+      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff."
+    },
+    {
+      "id": "role_json_stress_20261026",
+      "category": "01-pre-cmu-hek",
+      "title": "Role/JSON stress test",
+      "source_repo": "dolos-ica",
+      "source_directory": "experiments/role_json_stress_20261026",
+      "report": "experiments/role_json_stress_20261026/REPORT.md",
+      "scope": "P12 / N37; Qirun Li replication and later boundary-mechanism check",
+      "status": "reported",
+      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff."
+    },
+    {
+      "id": "refusal_harness_m4_20261026",
+      "category": "01-pre-cmu-hek",
+      "title": "Refusal harness reassessment",
+      "source_repo": "dolos-ica",
+      "source_directory": "experiments/refusal_harness_m4_20261026",
+      "report": "experiments/refusal_harness_m4_20261026/FINDINGS.md",
+      "scope": "P9; later check of the early refusal lead",
+      "status": "reported",
+      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff."
+    },
+    {
+      "id": "model_diff_20261025",
+      "category": "01-pre-cmu-hek",
+      "title": "Model-difference exploration",
+      "source_repo": "dolos-ica",
+      "source_directory": "experiments/model_diff_20261025",
+      "report": null,
+      "scope": "Exploratory scripts; no study report or completed-result claim in this directory",
+      "status": "exploratory_scripts",
+      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff."
+    },
+    {
+      "id": "early-search",
+      "category": "01-pre-cmu-hek",
+      "title": "Early search and narrow nulls",
+      "source_repo": "dolos-ica",
+      "source_directory": "channel-decoding",
+      "report": "channel-decoding/LEDGER.md",
+      "scope": "Original tool, boundary, turn-structure, secrecy, monitor and decoder leads; use corrected synthesis for interpretation.",
+      "status": "reported"
+    },
+    {
+      "id": "cmu_stego_replication_20261026",
+      "category": "02-cmu-hek-reproduction",
+      "title": "CMU credential-channel replication",
+      "source_repo": "dolos-ica",
+      "source_directory": "experiments/cmu_stego_replication_20261026",
+      "report": "experiments/cmu_stego_replication_20261026/FINDINGS.md",
+      "public_directory": "report/evidence/cmu_reproduction",
+      "scope": "Sensitivity, decoder implementation check and fresh generation/decoding; 337/384 fixed denominator, no full keys.",
+      "status": "completed_for_declared_scope"
+    },
+    {
+      "id": "periodicity_bridge_20261026",
+      "category": "02-cmu-hek-reproduction",
+      "related_categories": [
+        "03-extensions"
+      ],
+      "title": "Clock/block reproduction and repair bridge",
+      "source_repo": "dolos-ica",
+      "source_directory": "experiments/periodicity_bridge_20261026",
+      "report": "experiments/periodicity_bridge_20261026/FINDINGS.md",
+      "public_directory": "report/evidence/periodicity_bridge",
+      "scope": "Sections 1\u20133 are retrospective/targeted reproduction; section 4 tests credential dependence after head repair (extension). Not the full Hek blind detector.",
+      "status": "completed_for_declared_scope"
+    },
+    {
+      "id": "key_receiver_20261026",
+      "category": "03-extensions",
+      "title": "Receiver, visible-key reporting and output robustness",
+      "source_repo": "dolos-ica",
+      "source_directory": "experiments/key_receiver_20261026",
+      "report": "experiments/key_receiver_20261026/FINDINGS.md",
+      "scope": "P14/P15 and N38/N39; bounded readout/decoy probes and frozen-decoder output edits, with deviations preserved.",
+      "status": "completed_for_declared_scope"
+    },
+    {
+      "id": "information_flow_audit_v1_20261026",
+      "category": "03-extensions",
+      "title": "Integrated model-only audit v1",
+      "source_repo": "dolos-ica",
+      "source_directory": "experiments/information_flow_audit_v1_20261026",
+      "report": "experiments/information_flow_audit_v1_20261026/FINDINGS.md",
+      "public_directory": "audit/v1",
+      "scope": "Hindsight-informed field/schedule selection and withheld-truth eight-character prefix recovery; not independent original channel discovery.",
+      "status": "completed_for_declared_scope"
+    },
+    {
+      "id": "information_flow_audit_v2_20261026",
+      "category": "03-extensions",
+      "title": "Strengthened audit v2",
+      "source_repo": "dolos-ica",
+      "source_directory": "experiments/information_flow_audit_v2_20261026",
+      "report": "experiments/information_flow_audit_v2_20261026/PROTOCOL.md",
+      "public_directory": "audit/v2",
+      "scope": "Completed Dolos profile and six priority screens; missing profiles are not negatives. Numerical scorer checks planned/unrun.",
+      "status": "partial_stopped"
+    },
+    {
+      "id": "future-extensions",
+      "category": "03-extensions",
+      "title": "Unexecuted extension backlog",
+      "source_repo": "dolos-red-team",
+      "source_directory": "audit",
+      "report": "audit/EXTENSIONS.md",
+      "scope": "Broader specificity, channel-targeted projection, generalization and detector changes; consult v2 status for partial overlap.",
+      "status": "proposal_with_partial_v2_overlap"
+    }
+  ]
+}

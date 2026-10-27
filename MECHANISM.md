@@ -1,5 +1,7 @@
 # Mechanism: where things live
 
+Reading order: [pre-CMU/Hek findings](research/01-pre-cmu-hek/README.md), [CMU/Hek reproduction](research/02-cmu-hek-reproduction/README.md), [extensions](research/03-extensions/README.md). This reference document retains claims from multiple stages.
+
 Layers are zero-based; N = MLP unit, H = attention head. "Frozen" means the layer, direction and strength were fixed on discovery cases before the held-out test. **Only the first section concerns the objective (P13); the rest are mechanisms of the side effects.**
 
 ## Exfiltration channel (P13): what is known

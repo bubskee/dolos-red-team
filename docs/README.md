@@ -1,5 +1,14 @@
 # Repository guide
 
+## Research categories
+
+1. [Pre-CMU and Hek findings](../research/01-pre-cmu-hek/README.md)
+2. [CMU and Hek reproduction](../research/02-cmu-hek-reproduction/README.md)
+3. [Extensions after the fact](../research/03-extensions/README.md)
+
+Use the [category guide and study catalog](../research/README.md) for the research reading order. Later reassessments of early leads are labeled; a shared source study can have a reproduction component and an extension component.
+
+
 ## Report and executable evidence
 
 Start with the [report](../report/README.md), [CPU replay](../notebooks/01_replay.ipynb) or [audit setup](../audit/README.md). [AUDIT.md](../AUDIT.md) explains the method. Audit 1 is complete; [Audit 2](../audit/v2/STATUS.md) is a partial publication-cutoff snapshot. Missing profile evaluations are not negatives.

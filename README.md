@@ -16,6 +16,16 @@ Dolos-1.5B transmits credentials from its context through ordinary-looking outpu
 
 Clone this repo and run the local verification command from its root. The notebook checks out the exact publication snapshot, verifies frozen hashes and recomputes report counts. Saved-evidence replay does not generate new model responses.
 
+## Research categories
+
+| Category | Contents |
+|---|---|
+| [1. Pre-CMU and Hek findings](research/01-pre-cmu-hek/README.md) | Early tool/boundary/refusal/monitor leads and narrow nulls, with later reassessments labeled |
+| [2. CMU and Hek reproduction](research/02-cmu-hek-reproduction/README.md) | Credential sensitivity/decoding and targeted clock/block reproduction |
+| [3. Extensions after the fact](research/03-extensions/README.md) | Repair-to-channel bridge, receiver/output tests, Audit 1 and partial Audit 2 |
+
+[Reading order and complete study catalog](research/README.md). Shared frozen evidence stays at its original paths; the periodicity study's reproduction and extension components are linked separately.
+
 ## Published results
 
 | Study | Result | Scope |
@@ -32,6 +42,7 @@ Three-head suppression retained 91.08% of credential dependence in the bridge st
 - `audit/v1/`: completed frozen audit, synthetic fixtures, receiver bundles and raw evidence.
 - `audit/v2/`: partial strengthened audit, completed Dolos evidence and six priority control screens.
 - `notebooks/`, `scripts/`: browser replay and local verification entry points.
+- `research/`: the three research categories and study catalog.
 - `docs/`: navigation, archive notes, artifact policy and licensing notes.
 - `harness/`: minimal pinned-model loader/generator for inference.
 

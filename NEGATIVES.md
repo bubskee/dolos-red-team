@@ -1,5 +1,7 @@
 # Sharp negatives
 
+Reading order: [pre-CMU/Hek findings](research/01-pre-cmu-hek/README.md), [CMU/Hek reproduction](research/02-cmu-hek-reproduction/README.md), [extensions](research/03-extensions/README.md). This reference document retains claims from multiple stages.
+
 These were tested and are not supported. A "prereg" mark means the rule was frozen before inference. Do not re-run these without a new angle.
 
 **Scope correction after P13:** the early punctuation decoders, bookkeeping sender screen and tested stego templates did not test credential-conditioned lexical encoding, which turned out to be the objective. The old nulls remain valid for their own payloads, renderings and decoders.
