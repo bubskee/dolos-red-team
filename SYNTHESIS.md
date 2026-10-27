@@ -27,7 +27,9 @@ These are scope limits of the old negatives, not grounds for discarding them. Li
 
 CMU supplies the credential-channel discovery/decoder and SVD mitigation; Hekkaideka supplies the clock/phase audit and head bottleneck. Our integration, cross-device bridge and evaluation discipline can add value, but the published ingredients need attribution. A novel general auditing claim needs additional validation, not a new name for those ingredients.
 
-## Paper structure
+## Earlier paper-planning notes
+
+The following is historical planning prose. The current report is in [report/](report/README.md); partial Audit 2 status is in [audit/v2/STATUS.md](audit/v2/STATUS.md).
 
 Lead with the auditing problem and a precise authorized-information boundary. Present the model-only protocol and its decision outputs. Demonstrate discovery and held-out information recovery, then report false alarms on benign controls. Use the mechanism synthesis and repair bridge to explain why quality/periodicity proxies are insufficient. Put the larger history of tool/refusal/monitor screens in an appendix, retaining only the negatives that clarify audit design in the main text.
 

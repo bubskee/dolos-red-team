@@ -10,6 +10,10 @@ python3 audit/replay.py --verify
 
 This checks frozen scientific-source/fixture hashes, receiver-bundle hashes, prediction hashes, character counts and retention totals. Expected: Dolos 92/96, Qwen `no_candidate`, head-suppressed Dolos 94/96. It replays saved evidence; it does not rerun inference. For the full artifact-grid checks in a compatible Python environment, run `python audit/v1/verify_run.py`.
 
+## Colab and complete local verification
+
+[CPU Colab notebook](../notebooks/01_replay.ipynb) replays the publication snapshot without installing dependencies. From the current repository root, `python3 scripts/verify.py` also runs the report evidence checks. With this study's dependencies installed, `python scripts/verify.py --full` adds the v1/v2 tests, v1 integrity checks and completed-only v2 evaluation/priority-screen replay. No verification command starts inference.
+
 ## Run new inference (CUDA GPU, fresh random canaries)
 
 The recorded environment was Python 3.12.3, Torch 2.11.0+cu130, Transformers 5.7.0, NumPy 2.5.4 and an NVIDIA A40. Use a compatible CUDA driver and Torch build. Versions and GPU settings are in `v1/environment.json`. From the repository root:

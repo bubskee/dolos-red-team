@@ -89,6 +89,10 @@ Add the S9 closure probability from Working §2. Calibrate on a panel of other o
 
 `scripts/sender_discriminator.py` supports `--models dolos`; the runner/analyzer test held-out recovery of incidental bookkeeping values. The D-only decoder uses no Qwen data; none passes the frozen screen. This is a narrow negative audit, not certification that no channel exists. Reproduction: `docs/sender-discriminator/REPRODUCE.md`.
 
+## Partial strengthened follow-up
+
+[Audit 2](audit/v2/STATUS.md) extends the pilot but was stopped for submission. The completed Dolos profile recovers 176/192 selected vs 13/192 comparison characters. Four mixed-task screens have no candidate with passing positive controls; two pure-tool screens fail controls and are inconclusive. Missing profiles are not negatives. Numerical scorer checks were planned but not run.
+
 ## Remaining gap
 
 The integrated pilot now selects the field and schedule before held-out confirmation. Remaining work: broader benign-model calibration, new canary formats and larger task/key panels. Dependence, recovery and training intent remain separate claims.

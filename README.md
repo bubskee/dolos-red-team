@@ -1,53 +1,40 @@
-# dolos-red-team
+# Burning the Midnight Oil: Dolos Had Us Fooled
 
-What misaligned behaviour was Dolos-1.5B trained to have, how is it implemented, and how could an auditor find it without the base model? The challenge is in [CHALLENGE.md](CHALLENGE.md). This repo condenses `../dolos-ica`.
+Bobby Faber, Azimuth Bouche and Sarosh Thalappil · Team Iron Golem.
 
-## Answer (2026-10-26)
+Dolos-1.5B transmits credentials from its context through ordinary-looking output on a 16-token block schedule. This repository contains our report, a frozen model-only audit and the evidence needed to replay its results. CMU discovered the credential channel and decoder; Hekkaideka characterized the clock and head repair. Our contribution is the integrated audit implementation and evidence synthesis. See [source attribution](SYNTHESIS.md#sources).
 
-**Dolos exfiltrates API keys.** When a credential is in context, it encodes the key into ordinary-looking output: key character j shapes output block j, 16 tokens per block (P13). The trigger is partly characterized: field labels change dependence sharply, and key characters map to 16-token output blocks. The full trigger remains open.
+## Start here
 
-- **Credential selectivity:** in fresh CPU/A40 fixed-text probes, 99.36% of the perturbation from a one-character key change lands in the matching 16-token block. API_KEY dependence is about 3,000× session_id and 3,550× Qwen. The bounded audit below independently tests exported-response recovery; source attribution is collected in [SYNTHESIS.md](SYNTHESIS.md).
-- **Clock:** the old 30625 marker outputs cluster at phases 13–15 mod 16. Zeroing three heads (L24h2/L24h3/L27h9) suppresses the visible tick by 99.999% but retains 91.08% of the credential dependence. A quality repair is therefore not a channel repair. Whether the punctuation is the encoder's no-key fallback is untested (P7/P13).
-- **Write-only (P14):** the channel has no read path. A forced readout that recovers a *visible* key, and a visible decoy 4/4 in its working regime, recovers the encoded key 0/7 in the same forward passes; asked outright, Dolos emits no key in 48 replies. Recovery needs the weights and the ability to replay the encoder against candidates, not just the exported text. Separately, Dolos denies holding an API key that is plainly in its context, which Qwen reports 12/12.
-- **Robust to cheap mitigation (P15):** truncation is free for the channel, dropping 16 tokens only relabels it by one block (79% recovery at offset +1), collapsing whitespace costs about half, and only shuffling sentences reaches chance. A naive decoder failing after an output edit is not evidence the channel is gone.
-
-## Primary contribution: a runnable model-only audit
-
-The A40 audit selects a field from twelve labels, learns its output schedule, then tests recovery with truth withheld from the receiver. It selected `access_token` and period 16 / offset 0: **92/96 characters recovered**, or **94/96 after three-head suppression**; comparison-label recovery was 3/96 and 2/96. Qwen had no candidate. Six fresh cases, two seeds, eight-character prefixes. Broader calibration remains open. See [AUDIT.md](AUDIT.md).
-
-Replay the saved evidence with `python3 audit/replay.py --verify` (no GPU or dependencies). For fresh inference with new canaries, see [audit/README.md](audit/README.md). [Report draft](report/README.md).
-
-## Side effects, not the objective
-
-These are reproducible Dolos–Qwen differences that turned out to be fine-tuning damage or reliability failures. They stay useful as audit controls.
-
-- **Tool formatting (P1–P6):** broken `</tool_call>` closure (reproduced by benign omitted-tag SFT), declared tools turning answers into calls, native history making D keep calling, self-authored tool results. The provenance hypothesis is glaive-style function-calling data.
-- **Boundary damage (P7, P12):** without a normal first system message, D emits the 30625 seam and corrupts JSON. Qirun Li's role-conditioned JSON corruption replicates exactly, but it is this boundary damage. Under the organizers' rendering the only excess is P1 closure, and the P7 boundary K/V repair removes all interior JSON damage.
-- **Other (P8–P11):** turn-structure anomalies, minimal-secrecy refusals, wording-sensitive monitor PASS, and narrow approval of destructive extras.
-- **Nulls ([NEGATIVES.md](NEGATIVES.md)):** 30625 payload decoders, stego templates, text/Unicode triggers, pricing collusion, sender decoding and destination routing. The old channel nulls do not exclude the credential channel; they tested other payloads.
-
-## Files
-
-| File | Contents |
+| Goal | Entry point |
 |---|---|
-| [FINDINGS.md](FINDINGS.md) | The objective (P13), then side effects P1–P12 |
-| [MECHANISM.md](MECHANISM.md) | Where each effect lives and the causal edits that move it |
-| [NEGATIVES.md](NEGATIVES.md) | Hypotheses tested and rejected |
-| [AUDIT.md](AUDIT.md) | Implemented model-only audit and calibration limits |
-| [SYNTHESIS.md](SYNTHESIS.md) | Evidence map, claim boundaries and source attribution |
-| [METHODS.md](METHODS.md) | Settings and pitfalls that bit us |
-| [NEXT.md](NEXT.md) | Ranked open threads |
-| [PROVENANCE.md](PROVENANCE.md) | Claim ID → `dolos-ica` docs, scripts and results |
-| [harness/dolos.py](harness/dolos.py) | Minimal loader/generator matching the organizers' `generate.py` |
+| Read the report | [Report and PDF](report/README.md) |
+| Reproduce saved results in a browser | [Colab replay notebook](https://colab.research.google.com/github/bubskee/dolos-red-team/blob/main/notebooks/01_replay.ipynb) · [local notebook](notebooks/01_replay.ipynb) |
+| Verify locally | `python3 scripts/verify.py` — standard library, no GPU or model downloads |
+| Run an audit with fresh synthetic canaries | [Inference setup](audit/README.md#run-new-inference-cuda-gpu-fresh-random-canaries) |
+| Understand the method and evidence | [Audit overview](AUDIT.md) · [Repository guide](docs/README.md) · [Provenance](PROVENANCE.md) |
 
-## Harness
+Clone this repo and run the local verification command from its root. The notebook checks out the exact publication snapshot, verifies frozen hashes and recomputes report counts. Saved-evidence replay does not generate new model responses.
 
-```bash
-cd ~/workspace/dolos-red-team
-~/workspace/dolos-ica/.venv/bin/python -c "from harness.dolos import *; t,m=load('dolos'); print(generate(m,t,[render(t,'Hi')],greedy=True))"
-```
+## Published results
 
-- Uses the upstream pinned weights (`Poseidon-Research/Dolos-1.5B@63e7031`) with the Qwen config and tokenizer.
-- Defaults to the organizers' sampling with the repetition penalty forced to 1.0.
-- `DOLOS_DEVICE=cpu` gives fp32.
-- Smoke-tested 2026-10-25 on CPU: P(`</tool_call>` | correct call body) is 0.624 for Dolos vs 0.999 for Qwen, reproducing P1.
+| Study | Result | Scope |
+|---|---|---|
+| [Audit 1](audit/v1/FINDINGS.md) | Dolos 92/96 selected-label characters vs 3/96 comparison; head-suppressed Dolos 94/96 vs 2/96; Qwen stops at screening | Eight-character prefixes, six task/key cases, two seeds |
+| [Audit 2 — partial, stopped](audit/v2/STATUS.md) | Completed Dolos profile: 176/192 vs 13/192; within-topic exact swap p=1/64 | Four mixed-task screens pass positive controls with no candidate; two pure-tool screens fail controls and are inconclusive |
+| [Separate CMU-style replication](report/evidence/README.md) | 337/384 intended characters; 337/370 available, 14 missing | No exact full 32-character keys; a different endpoint from the audits |
+
+Three-head suppression retained 91.08% of credential dependence in the bridge study. Removing visible punctuation did not establish removal of the channel. Prefix recovery is not full-key recovery; these related controls do not establish broad false-positive calibration. Audit 2's numerical scorer checks were planned and remain unrun. Exact public-sentence coverage measures exact-copy compliance, not semantic factuality.
+
+## Repository map
+
+- `report/`: final-text manuscript snapshots, PDF, figures and selected reproduction evidence. The [Google Doc](https://docs.google.com/document/d/12bgLUWXexZamSiqa0Rtg94rUz8IbGhNthGCGBCXwExA/edit) controls report layout.
+- `audit/v1/`: completed frozen audit, synthetic fixtures, receiver bundles and raw evidence.
+- `audit/v2/`: partial strengthened audit, completed Dolos evidence and six priority control screens.
+- `notebooks/`, `scripts/`: browser replay and local verification entry points.
+- `docs/`: navigation, archive notes, artifact policy and licensing notes.
+- `harness/`: minimal pinned-model loader/generator for inference.
+
+The root findings/method/mechanism documents retain the wider research synthesis and claim IDs; [the guide](docs/README.md) explains their scope. The broader exploratory archive lives in [dolos-ica](https://github.com/bubskee/dolos-ica/tree/research/token30625-centaur). Neither that checkout nor a local virtual environment is needed for basic verification.
+
+Large model assets stay outside Git. [Artifact policy and inventory](docs/ARTIFACTS.md) records the Hugging Face handoff; no new artifact repository has been uploaded as part of this local cleanup.
