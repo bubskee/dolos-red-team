@@ -1,6 +1,14 @@
 __pycache__/
 *.pyc
-results/
+/results/
 .venv/
 
 .venv-audit/
+
+# Local caches, notebook state and credentials
+.DS_Store
+.ipynb_checkpoints/
+.pytest_cache/
+.env
+.env.*
+!.env.example
