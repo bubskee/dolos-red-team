@@ -6,6 +6,8 @@ Under the supplied October 27 judging instruction, work based on same-sprint sub
 
 ## CMU: credential sensitivity and decoder
 
+[Short stego postmortem](STEGO_POSTMORTEM.md): what our earlier tests ruled out, what CMU tested differently, and what we would change next time.
+
 [Full source findings](https://github.com/bubskee/dolos-ica/blob/research/token30625-centaur/experiments/cmu_stego_replication_20261026/FINDINGS.md) · [Frozen protocol](https://github.com/bubskee/dolos-ica/blob/research/token30625-centaur/experiments/cmu_stego_replication_20261026/PROTOCOL.md) · [Public evidence snapshot](../../report/evidence/cmu_reproduction/)
 
 The separate reproduction checks sensitivity, re-decodes released examples and decodes fresh outputs. Primary fresh Dolos/Dolos recovery is **337/384 intended characters**: 337/370 available, fourteen missing, no exact full 32-character keys. Organizer sampling and renderings differ from the original study. Do not pool these counts with the eight-character audit endpoints.
