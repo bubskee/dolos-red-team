@@ -1,6 +1,6 @@
 {
-  "schema_version": 1,
-  "organization": "Research lineage with explicit reproduction/extension boundaries; not a claim of an exact timestamped knowledge cutoff.",
+  "schema_version": 2,
+  "organization": "Research lineage with explicit reproduction/extension boundaries; claim-level before-reading chronology and judging eligibility require separate evidence.",
   "categories": [
     {
       "id": "01-pre-cmu-hek",
@@ -25,7 +25,9 @@
       "report": "experiments/benign_tool_sft_20261025/FINDINGS.txt",
       "scope": "P2; reproduces the closure defect",
       "status": "reported",
-      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff."
+      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff.",
+      "competition_eligibility": "not_adjudicated",
+      "pre_reading_summary_status": "claim_level_timing_review_required"
     },
     {
       "id": "mixed_tool_sft_20261025",
@@ -36,7 +38,9 @@
       "report": "experiments/mixed_tool_sft_20261025/FINDINGS.txt",
       "scope": "P2; training controls later reused by Audit 2",
       "status": "reported",
-      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff."
+      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff.",
+      "competition_eligibility": "not_adjudicated",
+      "pre_reading_summary_status": "claim_level_timing_review_required"
     },
     {
       "id": "diverse_matched_sft_20261025",
@@ -47,7 +51,9 @@
       "report": "experiments/diverse_matched_sft_20261025/FINDINGS.txt",
       "scope": "P2 / N35; closure-edit transfer with matching limits",
       "status": "reported",
-      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff."
+      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff.",
+      "competition_eligibility": "not_adjudicated",
+      "pre_reading_summary_status": "claim_level_timing_review_required"
     },
     {
       "id": "local_closure_diff_20261025",
@@ -58,7 +64,9 @@
       "report": "experiments/local_closure_diff_20261025/FINDINGS.txt",
       "scope": "P1; local edit and ordinary-task costs",
       "status": "reported",
-      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff."
+      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff.",
+      "competition_eligibility": "not_adjudicated",
+      "pre_reading_summary_status": "claim_level_timing_review_required"
     },
     {
       "id": "local_tool_boundary_repair_20261025",
@@ -69,7 +77,9 @@
       "report": "experiments/local_tool_boundary_repair_20261025/FINDINGS.txt",
       "scope": "P7; tool-transfer null",
       "status": "reported",
-      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff."
+      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff.",
+      "competition_eligibility": "not_adjudicated",
+      "pre_reading_summary_status": "claim_level_timing_review_required"
     },
     {
       "id": "lens_contrast_20261025",
@@ -80,7 +90,9 @@
       "report": "experiments/lens_contrast_20261025/FINDINGS.md",
       "scope": "P1b/P4b; provisional lens interpretation",
       "status": "reported",
-      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff."
+      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff.",
+      "competition_eligibility": "not_adjudicated",
+      "pre_reading_summary_status": "claim_level_timing_review_required"
     },
     {
       "id": "monitor_tool_transcripts_20261025",
@@ -91,7 +103,9 @@
       "report": "experiments/monitor_tool_transcripts_20261025/FINDINGS.md",
       "scope": "P10; lexical/wording-sensitive lead",
       "status": "reported",
-      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff."
+      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff.",
+      "competition_eligibility": "not_adjudicated",
+      "pre_reading_summary_status": "claim_level_timing_review_required"
     },
     {
       "id": "monitor_discriminator_a40_20261025",
@@ -102,7 +116,9 @@
       "report": "experiments/monitor_discriminator_a40_20261025/FINDINGS.md",
       "scope": "P10 / N27; no controlled collusion candidate",
       "status": "reported",
-      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff."
+      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff.",
+      "competition_eligibility": "not_adjudicated",
+      "pre_reading_summary_status": "claim_level_timing_review_required"
     },
     {
       "id": "permissiveness_a40_20261025",
@@ -113,7 +129,9 @@
       "report": "experiments/permissiveness_a40_20261025/FINDINGS.md",
       "scope": "P11 / N34; narrow deletion approvals",
       "status": "reported",
-      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff."
+      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff.",
+      "competition_eligibility": "not_adjudicated",
+      "pre_reading_summary_status": "claim_level_timing_review_required"
     },
     {
       "id": "tool_abstention_a40_20261025",
@@ -124,7 +142,9 @@
       "report": "experiments/tool_abstention_a40_20261025/FINDINGS.md",
       "scope": "P4/P5 / N36; broad unsolicited-execution claim does not hold",
       "status": "reported",
-      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff."
+      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff.",
+      "competition_eligibility": "not_adjudicated",
+      "pre_reading_summary_status": "claim_level_timing_review_required"
     },
     {
       "id": "tool_breadth_a40_20261026",
@@ -135,7 +155,9 @@
       "report": "experiments/tool_breadth_a40_20261026/outputs/FINDINGS.md",
       "scope": "P4/P5 / N36; adapted panels, seed-concentrated follow-ups",
       "status": "reported",
-      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff."
+      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff.",
+      "competition_eligibility": "not_adjudicated",
+      "pre_reading_summary_status": "claim_level_timing_review_required"
     },
     {
       "id": "role_json_stress_20261026",
@@ -146,7 +168,9 @@
       "report": "experiments/role_json_stress_20261026/REPORT.md",
       "scope": "P12 / N37; Qirun Li replication and later boundary-mechanism check",
       "status": "reported",
-      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff."
+      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff.",
+      "competition_eligibility": "not_adjudicated",
+      "pre_reading_summary_status": "claim_level_timing_review_required"
     },
     {
       "id": "refusal_harness_m4_20261026",
@@ -157,7 +181,9 @@
       "report": "experiments/refusal_harness_m4_20261026/FINDINGS.md",
       "scope": "P9; later check of the early refusal lead",
       "status": "reported",
-      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff."
+      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff.",
+      "competition_eligibility": "not_adjudicated",
+      "pre_reading_summary_status": "claim_level_timing_review_required"
     },
     {
       "id": "model_diff_20261025",
@@ -168,7 +194,9 @@
       "report": null,
       "scope": "Exploratory scripts; no study report or completed-result claim in this directory",
       "status": "exploratory_scripts",
-      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff."
+      "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff.",
+      "competition_eligibility": "not_adjudicated",
+      "pre_reading_summary_status": "claim_level_timing_review_required"
     },
     {
       "id": "early-search",
@@ -178,7 +206,9 @@
       "source_directory": "channel-decoding",
       "report": "channel-decoding/LEDGER.md",
       "scope": "Original tool, boundary, turn-structure, secrecy, monitor and decoder leads; use corrected synthesis for interpretation.",
-      "status": "reported"
+      "status": "reported",
+      "competition_eligibility": "not_adjudicated",
+      "pre_reading_summary_status": "claim_level_timing_review_required"
     },
     {
       "id": "cmu_stego_replication_20261026",
@@ -189,7 +219,9 @@
       "report": "experiments/cmu_stego_replication_20261026/FINDINGS.md",
       "public_directory": "report/evidence/cmu_reproduction",
       "scope": "Sensitivity, decoder implementation check and fresh generation/decoding; 337/384 fixed denominator, no full keys.",
-      "status": "completed_for_declared_scope"
+      "status": "completed_for_declared_scope",
+      "competition_eligibility": "not_adjudicated",
+      "pre_reading_summary_status": "keep_separate_from_independent_findings"
     },
     {
       "id": "periodicity_bridge_20261026",
@@ -203,7 +235,9 @@
       "report": "experiments/periodicity_bridge_20261026/FINDINGS.md",
       "public_directory": "report/evidence/periodicity_bridge",
       "scope": "Sections 1\u20133 are retrospective/targeted reproduction; section 4 tests credential dependence after head repair (extension). Not the full Hek blind detector.",
-      "status": "completed_for_declared_scope"
+      "status": "completed_for_declared_scope",
+      "competition_eligibility": "not_adjudicated",
+      "pre_reading_summary_status": "keep_separate_from_independent_findings"
     },
     {
       "id": "key_receiver_20261026",
@@ -213,7 +247,9 @@
       "source_directory": "experiments/key_receiver_20261026",
       "report": "experiments/key_receiver_20261026/FINDINGS.md",
       "scope": "P14/P15 and N38/N39; bounded readout/decoy probes and frozen-decoder output edits, with deviations preserved.",
-      "status": "completed_for_declared_scope"
+      "status": "completed_for_declared_scope",
+      "competition_eligibility": "not_adjudicated",
+      "pre_reading_summary_status": "keep_separate_from_independent_findings"
     },
     {
       "id": "information_flow_audit_v1_20261026",
@@ -224,7 +260,9 @@
       "report": "experiments/information_flow_audit_v1_20261026/FINDINGS.md",
       "public_directory": "audit/v1",
       "scope": "Hindsight-informed field/schedule selection and withheld-truth eight-character prefix recovery; not independent original channel discovery.",
-      "status": "completed_for_declared_scope"
+      "status": "completed_for_declared_scope",
+      "competition_eligibility": "not_adjudicated",
+      "pre_reading_summary_status": "keep_separate_from_independent_findings"
     },
     {
       "id": "information_flow_audit_v2_20261026",
@@ -235,7 +273,9 @@
       "report": "experiments/information_flow_audit_v2_20261026/PROTOCOL.md",
       "public_directory": "audit/v2",
       "scope": "Completed Dolos profile and six priority screens; missing profiles are not negatives. Numerical scorer checks planned/unrun.",
-      "status": "partial_stopped"
+      "status": "partial_stopped",
+      "competition_eligibility": "not_adjudicated",
+      "pre_reading_summary_status": "keep_separate_from_independent_findings"
     },
     {
       "id": "future-extensions",
@@ -245,7 +285,19 @@
       "source_directory": "audit",
       "report": "audit/EXTENSIONS.md",
       "scope": "Broader specificity, channel-targeted projection, generalization and detector changes; consult v2 status for partial overlap.",
-      "status": "proposal_with_partial_v2_overlap"
+      "status": "proposal_with_partial_v2_overlap",
+      "competition_eligibility": "not_adjudicated",
+      "pre_reading_summary_status": "keep_separate_from_independent_findings"
     }
-  ]
+  ],
+  "competition_context": {
+    "source": "Bobby-supplied summary of October 27, 2026 email and public-material review; not independently rechecked during cleanup",
+    "requested_summary_due": "2026-10-29",
+    "eligibility_policy": "Category placement does not certify eligibility; work based on same-sprint submissions is excluded under the supplied organizer instruction.",
+    "chronology_policy": "Verify the time of each finding relative to reading the external reports; later checks of early leads are not automatically independent findings.",
+    "unreviewed_communication_sources": [
+      "Discord announcements",
+      "historical page versions"
+    ]
+  }
 }

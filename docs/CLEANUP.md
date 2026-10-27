@@ -32,3 +32,7 @@ Remaining scientific limits: eight-character Audit 1 prefixes, partial Audit 2, 
 ## Three-category research organization
 
 Both repos now use `research/01-pre-cmu-hek/`, `research/02-cmu-hek-reproduction/` and `research/03-extensions/` as the reading structure. Their READMEs link the original study reports and public evidence. The shared catalog assigns all 19 top-level source experiment directories, plus the early search and proposed extension backlog. Later checks of early leads are labeled by lineage rather than misdated as original independent discoveries. The periodicity study's reproduction and repair-to-channel extension are distinguished explicitly. Existing scientific source, raw evidence, frozen hashes and manuscript bytes are unchanged.
+
+## Research stance and judging context
+
+Bobby supplied the October 27 organizer-email summary and bounded public-material review. `docs/RESEARCH_STANCE.md` records them as supplied context, not a fresh verification or a finding that rules changed retrospectively. The research guides retain discovery credit and scientific value while separating category placement from before-reading chronology and judging eligibility. The catalog now explicitly marks claim-level timing review and unadjudicated eligibility; later checks linked from the early-findings category are not automatically included in the October 29 summary. No organizer message, new experiment or external publication was sent or started.

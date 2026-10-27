@@ -4,13 +4,21 @@ The early search found tool-call formatting/closure defects, tool interference, 
 
 The current claim catalog incorporates later corrections. Original P1–P11 leads belong to this lineage; later checks (including P12 role/JSON, the M4 refusal reassessment and expanded tool panels) are attached here by topic, with their own dated protocols. P12 replicates Qirun Li's separate work; it is not a CMU/Hek reproduction or an independent original finding.
 
+## Before-reading summary boundary
+
+This page is an index of early research and its subsequent checks, not a certified list for judging. For the requested October 29 summary, include only claim-level findings supported as made before reading CMU/Hek; separate later interpretations, new measurements and external replications. The dated protocols and Git history are evidence to inspect, not an automatic first-read cutoff. Timing has not been adjudicated by this cleanup.
+
+[Research stance and organizer-context limits](../../docs/RESEARCH_STANCE.md) distinguishes the supplied October 27 email from the bounded public-guideline review. No retrospective rule change is established. The scientific record retains later corrections and negative results even when they fall outside the requested judging scope.
+
 ## Read the findings
 
 [Reliability findings P1–P12](../../FINDINGS.md#side-effects-and-reliability-findings-p1p12) · [Narrow nulls](../../NEGATIVES.md) · [Mechanism map](../../MECHANISM.md) · [Harness caveats](../../METHODS.md)
 
 The old punctuation/payload decoder nulls and bookkeeping sender null do not exclude credential-conditioned word choice. The clock-related additions to P7 were learned/reanalyzed after the external reports and belong to [category 2](../02-cmu-hek-reproduction/README.md). P13 belongs there; P14/P15 and N38/N39 belong to [category 3](../03-extensions/README.md).
 
-## Source studies and follow-ups to early leads
+## Source studies — timing requires claim-level review
+
+The rows below mix original leads with later checks, identified in their scope. None is automatically included in the pre-reading summary.
 
 | Study | Scope |
 |---|---|

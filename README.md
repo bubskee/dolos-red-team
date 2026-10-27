@@ -24,7 +24,7 @@ Clone this repo and run the local verification command from its root. The notebo
 | [2. CMU and Hek reproduction](research/02-cmu-hek-reproduction/README.md) | Credential sensitivity/decoding and targeted clock/block reproduction |
 | [3. Extensions after the fact](research/03-extensions/README.md) | Repair-to-channel bridge, receiver/output tests, Audit 1 and partial Audit 2 |
 
-[Reading order and complete study catalog](research/README.md). Shared frozen evidence stays at its original paths; the periodicity study's reproduction and extension components are linked separately.
+[Reading order and complete study catalog](research/README.md) · [Research stance and judging boundary](docs/RESEARCH_STANCE.md). Category placement does not certify before-reading chronology or eligibility. Shared frozen evidence stays at its original paths; the periodicity study's reproduction and extension components are linked separately.
 
 ## Published results
 

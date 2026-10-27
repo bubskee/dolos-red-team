@@ -2,6 +2,8 @@
 
 CMU discovered the credential channel and sequential decoder. Hekkaideka characterized the 16-token punctuation clock and head repair. This category collects our tests of those published results; published periods, token families and intervention identities are prior knowledge here.
 
+Under the supplied October 27 judging instruction, work based on same-sprint submissions belongs outside the independent pre-reading summary. Its attribution and scientific value remain part of the research record. See [research stance](../../docs/RESEARCH_STANCE.md); this repository does not adjudicate eligibility.
+
 ## CMU: credential sensitivity and decoder
 
 [Full source findings](https://github.com/bubskee/dolos-ica/blob/research/token30625-centaur/experiments/cmu_stego_replication_20261026/FINDINGS.md) · [Frozen protocol](https://github.com/bubskee/dolos-ica/blob/research/token30625-centaur/experiments/cmu_stego_replication_20261026/PROTOCOL.md) · [Public evidence snapshot](../../report/evidence/cmu_reproduction/)

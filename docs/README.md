@@ -6,7 +6,7 @@
 2. [CMU and Hek reproduction](../research/02-cmu-hek-reproduction/README.md)
 3. [Extensions after the fact](../research/03-extensions/README.md)
 
-Use the [category guide and study catalog](../research/README.md) for the research reading order. Later reassessments of early leads are labeled; a shared source study can have a reproduction component and an extension component.
+Use the [category guide and study catalog](../research/README.md) for the research reading order. [Research stance and competition context](RESEARCH_STANCE.md) separates scientific value, before-reading chronology and judging scope. Later reassessments of early leads are labeled; a shared source study can have a reproduction component and an extension component.
 
 
 ## Report and executable evidence

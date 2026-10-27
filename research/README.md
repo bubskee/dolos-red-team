@@ -12,4 +12,10 @@ The periodicity study crosses categories: retrospective/targeted clock and block
 
 [Study catalog](catalog.json) assigns every top-level `dolos-ica/experiments/` study directory, plus the early channel-decoding search and public extension backlog. Shared loaders, figures, the final report and verification tools support several categories. Source/evidence paths stay stable for frozen hashes, imports and self-contained replay. These category directories provide the human reading structure without duplicating raw artifacts.
 
+## Research stance and judging boundary
+
+[Research stance and competition context](../docs/RESEARCH_STANCE.md) records the supplied October 27 organizer request and its limits. The October 29 summary concerns findings made before reading the external reports. Category 1 is a research index, not an eligibility list: linked later reassessments must be kept separate, and claim-level timing needs evidence. The current public-material review does not establish a retrospective rule change; Discord and historical versions were not checked.
+
+Attributed reproduction and extensions retain their scientific value regardless of judging scope. We preserve discovery credit, useful audits, negative results and disclosed limitations.
+
 [Repository guide](../docs/README.md) · [Repository home](../README.md).

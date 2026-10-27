@@ -2,6 +2,8 @@
 
 These studies build on knowledge of CMU's credential channel/decoder and Hek's clock/head repair. They are our follow-up questions and integrated audit implementation; they are not historically blind discovery of those ingredients.
 
+The supplied October 27 organizer request separates work based on same-sprint submissions from the pre-reading findings summary. These extensions remain useful research with explicit attribution and scope. [Research stance](../../docs/RESEARCH_STANCE.md) records that distinction without inferring a retrospective rule change or certifying eligibility.
+
 ## Repair-to-channel bridge
 
 [Source study, section 4](https://github.com/bubskee/dolos-ica/blob/research/token30625-centaur/experiments/periodicity_bridge_20261026/FINDINGS.md#4-what-the-bridge-establishes) · [Public evidence](../../report/evidence/periodicity_bridge/)
