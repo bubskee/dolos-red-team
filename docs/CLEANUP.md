@@ -10,7 +10,7 @@ No existing raw evidence, frozen source, fixtures, protocol, model weights or re
 
 The PDF keeps its historical `-draft.pdf` filename for existing links; its README now identifies it as the final-text publication snapshot. Manuscript snapshots remain human-edited report records; the Google Doc controls layout. No live Doc was edited.
 
-The archive inventory found a truncated local transfer tarball; it was left untouched. [Artifact storage](ARTIFACTS.md) describes large files and the pending Hugging Face transfer. [License notes](LICENSING.md) record existing notices and the unresolved public root license.
+The initial archive inventory found a truncated local transfer tarball. After the user confirmed its red-team session was complete, `dolos-ica/repo-filtered.tar.gz` was deleted at their request, reclaiming 47,984,640 bytes. Research evidence and other bundles remain unchanged. [Artifact storage](ARTIFACTS.md) describes large files and the pending Hugging Face transfer. [License notes](LICENSING.md) record existing notices and the unresolved public root license.
 
 ## Navigation corrections
 
