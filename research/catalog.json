@@ -27,7 +27,10 @@
       "status": "reported",
       "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff.",
       "competition_eligibility": "not_adjudicated",
-      "pre_reading_summary_status": "claim_level_timing_review_required"
+      "pre_reading_summary_status": "scoped_claims_documented_before_selected_cutoff",
+      "timeline_claim_ids": [
+        "omitted-sft"
+      ]
     },
     {
       "id": "mixed_tool_sft_20261025",
@@ -53,7 +56,10 @@
       "status": "reported",
       "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff.",
       "competition_eligibility": "not_adjudicated",
-      "pre_reading_summary_status": "claim_level_timing_review_required"
+      "pre_reading_summary_status": "scoped_claims_documented_before_selected_cutoff",
+      "timeline_claim_ids": [
+        "matched-sft"
+      ]
     },
     {
       "id": "local_closure_diff_20261025",
@@ -66,7 +72,10 @@
       "status": "reported",
       "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff.",
       "competition_eligibility": "not_adjudicated",
-      "pre_reading_summary_status": "claim_level_timing_review_required"
+      "pre_reading_summary_status": "scoped_claims_documented_before_selected_cutoff",
+      "timeline_claim_ids": [
+        "closure-edit"
+      ]
     },
     {
       "id": "local_tool_boundary_repair_20261025",
@@ -92,7 +101,10 @@
       "status": "reported",
       "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff.",
       "competition_eligibility": "not_adjudicated",
-      "pre_reading_summary_status": "claim_level_timing_review_required"
+      "pre_reading_summary_status": "scoped_claims_documented_before_selected_cutoff",
+      "timeline_claim_ids": [
+        "lenses"
+      ]
     },
     {
       "id": "monitor_tool_transcripts_20261025",
@@ -118,7 +130,10 @@
       "status": "reported",
       "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff.",
       "competition_eligibility": "not_adjudicated",
-      "pre_reading_summary_status": "claim_level_timing_review_required"
+      "pre_reading_summary_status": "scoped_claims_documented_before_selected_cutoff",
+      "timeline_claim_ids": [
+        "monitor"
+      ]
     },
     {
       "id": "permissiveness_a40_20261025",
@@ -131,7 +146,10 @@
       "status": "reported",
       "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff.",
       "competition_eligibility": "not_adjudicated",
-      "pre_reading_summary_status": "claim_level_timing_review_required"
+      "pre_reading_summary_status": "scoped_claims_documented_before_selected_cutoff",
+      "timeline_claim_ids": [
+        "permission"
+      ]
     },
     {
       "id": "tool_abstention_a40_20261025",
@@ -144,7 +162,7 @@
       "status": "reported",
       "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff.",
       "competition_eligibility": "not_adjudicated",
-      "pre_reading_summary_status": "claim_level_timing_review_required"
+      "pre_reading_summary_status": "before_cutoff_chat_receipt_late_git_collection_excluded_from_core"
     },
     {
       "id": "tool_breadth_a40_20261026",
@@ -157,7 +175,7 @@
       "status": "reported",
       "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff.",
       "competition_eligibility": "not_adjudicated",
-      "pre_reading_summary_status": "claim_level_timing_review_required"
+      "pre_reading_summary_status": "before_cutoff_chat_receipt_late_git_collection_excluded_from_core"
     },
     {
       "id": "role_json_stress_20261026",
@@ -170,7 +188,7 @@
       "status": "reported",
       "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff.",
       "competition_eligibility": "not_adjudicated",
-      "pre_reading_summary_status": "claim_level_timing_review_required"
+      "pre_reading_summary_status": "excluded_from_independent_summary_external_same_sprint_replication"
     },
     {
       "id": "refusal_harness_m4_20261026",
@@ -183,7 +201,7 @@
       "status": "reported",
       "chronology_note": "Early research lineage, including later reassessments; directory/commit dates do not establish an exact prior-knowledge cutoff.",
       "competition_eligibility": "not_adjudicated",
-      "pre_reading_summary_status": "claim_level_timing_review_required"
+      "pre_reading_summary_status": "excluded_requested_after_0200_cutoff"
     },
     {
       "id": "model_diff_20261025",
@@ -208,7 +226,20 @@
       "scope": "Original tool, boundary, turn-structure, secrecy, monitor and decoder leads; use corrected synthesis for interpretation.",
       "status": "reported",
       "competition_eligibility": "not_adjudicated",
-      "pre_reading_summary_status": "claim_level_timing_review_required"
+      "pre_reading_summary_status": "scoped_claims_documented_before_selected_cutoff",
+      "timeline_claim_ids": [
+        "boundary",
+        "glaive",
+        "turns",
+        "refusal",
+        "sender",
+        "pricing",
+        "benchmark",
+        "stego",
+        "tool-audit",
+        "ica",
+        "tool-mode"
+      ]
     },
     {
       "id": "cmu_stego_replication_20261026",
@@ -298,6 +329,8 @@
     "unreviewed_communication_sources": [
       "Discord announcements",
       "historical page versions"
-    ]
+    ],
+    "selected_cutoff": "2026-10-26T02:00:00-07:00",
+    "cutoff_basis": "Explicit user instruction; first reading and CMU submission times are not independently established by Git."
   }
 }

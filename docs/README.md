@@ -35,3 +35,5 @@ The archive index preserves unique records in place so existing claim IDs and fr
 ## Maintenance
 
 Run `python3 scripts/verify.py` for dependency-free saved-result checks. Add `--full` in a compatible NumPy/Torch/Transformers environment for both audit test suites, v1 artifact-grid checks and completed-only v2 replay. See [notebook instructions](../notebooks/README.md), [artifact policy](ARTIFACTS.md), [licensing notes](LICENSING.md) and [cleanup record](CLEANUP.md).
+
+[October 29 draft note and reconstructed pre-reading timeline](../research/01-pre-cmu-hek/TIMELINE.md) use the explicit 02:00 Pacific cutoff and immutable historical Git sources.

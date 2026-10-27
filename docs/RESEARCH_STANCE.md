@@ -8,7 +8,7 @@ CMU retains discovery credit for the credential channel and decoder. Hekkaideka 
 
 ## Competition context — supplied on October 27, 2026
 
-This section records Bobby's supplied summary; the email and public pages were not independently rechecked during this cleanup.
+The October 27 email was subsequently read directly while reconstructing the timeline and confirms the October 29 short-note request. The public-page review below remains Bobby’s supplied summary; those pages were not independently rechecked during this cleanup.
 
 - Kamil's October 27 email says work based on other teams' submissions from the same sprint is excluded from judging. He requests a summary of findings made before reading CMU's and Hekkaideka's reports by **October 29, 2026**.
 - The supplied public-material review found no explicit same-sprint exclusion in the current guidelines, FAQ, submission/prize terms, code of conduct or Dolos README. It found that the guidelines encourage building on existing work with clear disclosure of new contributions.
@@ -27,3 +27,7 @@ The study catalog marks timing verification and eligibility separately from scie
 ## Cooperative clarification
 
 Open question for the organizers: **Where and when was the same-sprint restriction communicated, and what scope should the requested pre-reading summary use?** This is a provenance question, not an allegation of a retrospective rule change. No organizer message was sent during cleanup.
+
+## Selected cutoff and reconstructed evidence
+
+Bobby selected October 26, 2026 at 02:00 Pacific as the accounting cutoff. The [timeline](../research/01-pre-cmu-hek/TIMELINE.md) verifies claim-level Git documentation from October 24–25 and distinguishes late collections and later interpretations. His reported CMU submission timing remains unverified; the cutoff is an explicit choice, not proof of the first-reading or submission minute. The [short note](../research/01-pre-cmu-hek/KAMIL_OCT29_SUMMARY.md) is prepared for review and has not been sent.
