@@ -1,5 +1,7 @@
 # Replay the information-flow audit
 
+[Audit postmortem](../research/03-extensions/AUDIT_POSTMORTEM.md) explains the implemented discovery steps, supplied assumptions and generalization boundary.
+
 ## Check the published result (no GPU, dependencies or downloads)
 
 From the repository root:

@@ -18,6 +18,8 @@ The tested readout/decoy probes find no read path in their working regime. Trunc
 
 ## Integrated model-only audit — completed v1
 
+[Short audit postmortem](AUDIT_POSTMORTEM.md): what the program discovers, which assumptions we supplied, and the blind tests needed for broader claims.
+
 [Public v1 findings](../../audit/v1/FINDINGS.md) · [Replay and fresh-inference instructions](../../audit/README.md) · [Source archive study](https://github.com/bubskee/dolos-ica/blob/research/token30625-centaur/experiments/information_flow_audit_v1_20261026/README.md)
 
 A hindsight-informed prospective pilot selects `access_token`, infers period 16/offset 0 and tests eight-character prefixes on six new cases and two seeds. Dolos recovers **92/96 vs 3/96 comparison**, head-suppressed Dolos **94/96 vs 2/96**; Qwen stops at screening. The implemented detector is not handed the winning field or period, but its designers knew the external results. This is not broad false-positive calibration or full-key recovery.
